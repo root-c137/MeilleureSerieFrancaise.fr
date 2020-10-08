@@ -1,11 +1,46 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello HomeController!{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("CSS/Home.css")  }}"/>
+{% endblock %}
 
 {% block body %}
 
-    <h1>Votez pour la meilleure série française de tous les temps !</h1>
-    <h2>Ensuite, barrez-vous.</h2>
+    <main>
+
+        <section class="Title">
+        <h1>Votez pour la meilleure série française de tous les temps !</h1>
+        <h2>Ensuite, barrez-vous.</h2>
+        </section>
+
+        <section class="Votes">
+
+
+            <table>
+                <tr>
+                    <td><div class="Barre"></div></td>
+                    <td><div class="Barre"></div></td>
+                    <td><div class="Barre"></div></td>
+                    <td><div class="Barre"></div></td>
+                    <td><div class="Barre"></div></td>
+                    <td><div class="Barre"></div></td>
+                </tr>
+
+                <tr class="NomsSeries">
+                    <td>Kaamelott</td>
+                    <td>Kaamelott</td>
+                    <td>Kaamelott</td>
+                    <td>Kaamelott</td>
+                    <td>Kaamelott</td>
+                    <td>Kaamelott</td>
+
+                </tr>
+            </table>
+
+        </section>
+
+    </main>
 
 
 {% endblock %}
