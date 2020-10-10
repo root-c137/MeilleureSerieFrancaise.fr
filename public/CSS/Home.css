@@ -54,9 +54,22 @@ td .Barre
     box-shadow: 0.3px 1px 2px gray;
 }
 
+.Radio td
+{
+    padding:0;
+    height:1.4rem;
+}
+
+input[type=radio]
+{
+    height:1.6rem;
+    background-color: yellow;
+}
+
 .NomsSeries
 {
     font-size:0.8rem;
+    font-weight: bold;
 }
 .NomsSeries td
 {
@@ -64,3 +77,15 @@ td .Barre
     height:2.4rem;
 }
 
+.Imgs_Series td
+{
+    padding:0;
+    height:2rem;
+    border:1px solid red;
+}
+.Imgs_Series img
+{
+    width:3rem;
+    border:1px solid red;
+
+}

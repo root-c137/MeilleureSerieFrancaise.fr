@@ -34,7 +34,7 @@ header ul li
     justify-content: center;
     align-items: center;
 }
-.Connexion
+.Connexion, .Formulaire
 {
     width:40%;
     display:flex;
@@ -44,7 +44,11 @@ header ul li
     margin-right:8rem;
     padding:2rem;
 }
-.Connexion input, .Connexion button
+.Formulaire
+{
+    width:100%;
+}
+.Formulaire input, .Formulaire button
 {
     margin-right:1rem;
     width:50%;
@@ -60,4 +64,10 @@ header ul li
     color:#686d76;
     background-color:#FFF;
     padding:0.2rem;
+}
+.Connexion button:hover
+{
+    color:#FFF;
+    background-color:#373a40;
+    cursor:pointer;
 }

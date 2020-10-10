@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset("CSS/Home.css")  }}"/>
 {% endblock %}
@@ -10,11 +10,14 @@
     <main>
 
         <section class="Title">
-        <h1>Votez pour la meilleure série française de tous les temps !</h1>
-        <h2>Ensuite, barrez-vous.</h2>
+
+            <h1>Votez pour la meilleure série française de tous les temps !</h1>
+            <h2>Ensuite, barrez-vous.</h2>
+
         </section>
 
         <section class="Votes">
+
 
 
             <table>
@@ -27,16 +30,28 @@
                     <td><div class="Barre"></div></td>
                 </tr>
 
-                <tr class="NomsSeries">
-                    <td>Kaamelott</td>
-                    <td>Kaamelott</td>
-                    <td>Kaamelott</td>
-                    <td>Kaamelott</td>
-                    <td>Kaamelott</td>
-                    <td>Kaamelott</td>
+                <tr class="Radio">
+                    <td><input type="radio" name="X" id="Serie" value="X"/></td>
+                    <td><input type="radio" name="X" id="Serie" value="X"/></td>
+                    <td><input type="radio" name="X" id="Serie" value="X"/></td>
+                    <td><input type="radio" name="X" id="Serie" value="X"/></td>
+                    <td><input type="radio" name="X" id="Serie" value="X"/></td>
+                    <td><input type="radio" name="X" id="Serie" value="X"/></td>
 
                 </tr>
+
+                <tr class="NomsSeries">
+
+                    {% for Serie in Series %}
+                        <td>{{ Serie.nom }}</td>
+                    {% endfor %}
+
+                </tr>
+
+
             </table>
+
+            <button type="submit">Voter !</button>
 
         </section>
 
