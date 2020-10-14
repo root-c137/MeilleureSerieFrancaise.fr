@@ -37,6 +37,11 @@ class Serie
      */
     private $Proposer_Par;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $Nb_Vote;
+
 
     public function getId(): ?int
     {
@@ -87,6 +92,18 @@ class Serie
     public function setProposerPar(string $Proposer_Par): self
     {
         $this->Proposer_Par = $Proposer_Par;
+
+        return $this;
+    }
+
+    public function getNbVote(): ?int
+    {
+        return $this->Nb_Vote;
+    }
+
+    public function setNbVote(?int $Nb_Vote): self
+    {
+        $this->Nb_Vote = $Nb_Vote;
 
         return $this;
     }

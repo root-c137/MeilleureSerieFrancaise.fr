@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("CSS/Inscription.css")  }}"/>
+{% endblock %}
+
+{% block body %}
+
+    <main id="Inscription">
+
+        <div>
+
+
+        </div>
+
+        <div class="Formulaire">
+
+            <form method="post" action="{{ path("NewMembre") }}">
+
+                <table>
+
+                    <tr>
+                        <td class="Label"><label for="Pseudo">Pseudo</label></td>
+                        <td><input type="text" name="Pseudo" id="Pseudo" /></td>
+                    </tr>
+
+                    <tr>
+                        <td class="Label"><label for="Mail">Adresse mail</label></td>
+                        <td><input type="text" name="Mail" id="Mail"/></td>
+                    </tr>
+                    <tr>
+                        <td class="Label"><label for="Pass">Mot de passe</label></td>
+                        <td><input type="password" name="Pass" id="Pass"/></td>
+                    </tr>
+
+                </table>
+
+                <button type="submit" class="GoInscription">Inscription</button>
+            </form>
+
+
+        </div>
+
+    </main>
+
+
+{% endblock %}
+
+

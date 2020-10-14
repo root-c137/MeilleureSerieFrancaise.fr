@@ -31,6 +31,13 @@ h2
     text-align:center;
 }
 
+
+main form
+{
+    border:1px solid red;
+    width:100%;
+    height:100%;
+}
 table
 {
     width:100%;
@@ -49,7 +56,6 @@ td
 
 td .Barre
 {
-    height:100%;
     background-color: #e97171;
     box-shadow: 0.3px 1px 2px gray;
 }

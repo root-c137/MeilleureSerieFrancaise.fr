@@ -1,0 +1,59 @@
+#Inscription
+{
+    width:50%;
+    margin:auto;
+}
+
+#Inscription table
+{
+    width:100%;
+    border-collapse: separate;
+    border:1px solid red;
+
+}
+
+#Inscription .Formulaire
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.Formulaire input
+{
+    width:80%;
+    border:1px solid red;
+}
+
+.Formulaire table td
+{
+    width:50%;
+    border:1px solid green;
+    padding:0.4rem;
+}
+
+.Formulaire table .Label
+{
+    width:20%;
+    border:1px solid yellow;
+    text-align: center;
+}
+.Formulaire label
+{
+    width:100%;
+    border:1px solid blue;
+}
+
+.Formulaire .GoInscription
+{
+    width:10%;
+    margin-top:2rem;
+    background-color: #555555;
+    color:#FFF;
+}
+.Formulaire .GoInscription:hover
+{
+    background-color: #FFF;
+    color:#555555;
+    cursor:pointer;
+}
+

@@ -19,24 +19,21 @@
         <section class="Votes">
 
 
+            <form method="post" action="{{ path("NewVote") }}">
 
             <table>
                 <tr>
                     <td><div class="Barre"></div></td>
-                    <td><div class="Barre"></div></td>
-                    <td><div class="Barre"></div></td>
-                    <td><div class="Barre"></div></td>
-                    <td><div class="Barre"></div></td>
-                    <td><div class="Barre"></div></td>
+                    {% for Serie in Series %}
+                        <td><div class="Barre" style="height: {{ Serie.NbVote }}%;"></div></td>
+                    {% endfor %}
                 </tr>
 
                 <tr class="Radio">
-                    <td><input type="radio" name="X" id="Serie" value="X"/></td>
-                    <td><input type="radio" name="X" id="Serie" value="X"/></td>
-                    <td><input type="radio" name="X" id="Serie" value="X"/></td>
-                    <td><input type="radio" name="X" id="Serie" value="X"/></td>
-                    <td><input type="radio" name="X" id="Serie" value="X"/></td>
-                    <td><input type="radio" name="X" id="Serie" value="X"/></td>
+                    {% for Serie in Series %}
+                        <td><input type="radio" name="Vote" id="Serie" value="{{ Serie.id }}"/></td>
+                    {% endfor %}
+
 
                 </tr>
 
@@ -52,6 +49,7 @@
             </table>
 
             <button type="submit">Voter !</button>
+            </form>
 
         </section>
 
