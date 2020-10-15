@@ -1,7 +1,7 @@
 main
 {
     width:70%;
-    height:25rem;
+    height:40%;
     margin:auto;
     margin-top:5rem;
     display:flex;
@@ -22,49 +22,49 @@ main .Title
 
 .Votes
 {
-    width:50%;
+    width:100%;
     height:90%;
     margin:auto;
     text-align: center;
     margin-top:3rem;
     display: flex;
     flex-direction: column;
-    justify-items: flex-start;
-    align-items: flex-start;
 }
 
+.Votes form
+{
+    width:100%;
+    height:270px;
+    margin:auto;
+}
 .Votes table
 {
-    display:flex;
-    width:100%;
-    height:100%;
-    flex-direction: row;
     border-collapse: separate;
-    justify-content: center;
-
+    table-layout: fixed;
+    width:50%;
+    height:100%;
+    margin:auto;
 }
 
 .Votes td
 {
-    width:calc(100% / 3);
-    border:1px solid #FFF;
-    vertical-align: bottom;
-    padding:0.1rem;
+   width:100%;
+   height:10%;
 }
 
-.Votes .TdBarre
+.Votes .TDBarre
 {
-    padding:0.2rem;
-    height: 100%;
+height:90%;
+vertical-align: bottom;
+
 }
 
-.Votes .Barre
+.Votes td .Barre
 {
     width:40%;
-    min-height:0.4rem;
-    max-height:10rem;
-    background-color: #ececec;
+    background-color: #c56183;
     margin:auto;
+
 }
 
 .Votes .TD_BSubmit
@@ -88,10 +88,19 @@ main .Title
 
 @media screen and (min-width: 200px)
 {
+    main
+    {
+        width:100%;
+        padding:1rem;
+    }
     .Votes
     {
         width:100%;
         height:auto;
+    }
+    .Votes table, .Votes form
+    {
+        width:100%;
     }
     .Votes .Barre
     {
@@ -114,10 +123,15 @@ main .Title
 
 @media screen and (min-width: 500px)
 {
-    .Votes
+    .main
     {
         width:80%;
     }
+    .Votes
+    {
+        width:95%;
+    }
+
     .Voter_Button
     {
         width:50%;
@@ -126,7 +140,6 @@ main .Title
     {
         font-size:1rem;
         height:25%;
-
         padding:0;
     }
 }
@@ -135,7 +148,7 @@ main .Title
 {
     .Votes
     {
-        width:70%;
+        width:90%;
     }
     .Votes .Barre
     {
@@ -149,6 +162,10 @@ main .Title
 
 @media screen and (min-width: 800px)
 {
+    .Votes
+    {
+        width:85%;
+    }
 
     .Voter_Button
     {
@@ -159,8 +176,22 @@ main .Title
 @media screen and (min-width: 900px)
 {
 
+    .Votes
+    {
+        width:70%;
+    }
     .Voter_Button
     {
         width:25%;
     }
+}
+
+@media screen and (min-width: 1000px)
+{
+
+    .Votes
+    {
+        width:50%;
+    }
+
 }
