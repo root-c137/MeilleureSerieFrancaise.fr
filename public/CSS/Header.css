@@ -2,6 +2,7 @@ header
 {
     width:100%;
     height:10rem;
+    padding:2rem;
     display:flex;
     flex-direction: row;
     justify-content: space-between;
@@ -28,7 +29,7 @@ header ul li
 
 .Menu
 {
-    width:40%;
+    width:30%;
     dispay:flex;
     flex-direction: row;
     justify-content: center;
@@ -36,22 +37,22 @@ header ul li
 }
 .Connexion, .Formulaire
 {
-    width:40%;
     display:flex;
-    flex-display: row;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    margin-right:8rem;
-    padding:2rem;
 }
+
 .Formulaire
 {
     width:100%;
+    padding-top:1rem;
+    justify-content: center;
+    margin:auto;
 }
 .Formulaire input, .Formulaire button
 {
     margin-right:1rem;
-    width:50%;
     height:2rem;
     border:none;
     outline:none;
@@ -70,4 +71,145 @@ header ul li
     color:#FFF;
     background-color:#373a40;
     cursor:pointer;
+}
+
+a
+{
+font-size:1rem;
+    text-decoration: none;
+    color:#212121;
+}
+
+@media screen and (min-width: 400px)
+{
+    header
+    {
+        height:auto;
+    }
+    .Menu
+    {
+        display: none;
+    }
+    .Connexion
+    {
+        width:100%;
+        flex-direction: column;
+    }
+    .Formulaire
+    {
+        width:100%;
+        flex-direction: column;
+
+    }
+    .Formulaire input
+    {
+        width:80%;
+        margin-top:0.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .Formulaire button
+    {
+        width:40%;
+        margin-right:0;
+    }
+    .Create_c
+    {
+        text-align: center;
+        margin:1rem;
+    }
+
+}
+
+@media screen and (min-width: 600px)
+{
+    .Menu
+    {
+        display: none;
+    }
+    .Connexion
+    {
+        width:100%;
+        flex-direction: row;
+    }
+    .Formulaire
+    {
+        flex-direction: row;
+        width:80%;
+    }
+    .Formulaire input
+    {
+        width:80%;
+        margin-top:0.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .Formulaire button
+    {
+        width:40%;
+        margin-right:0;
+    }
+    .Create_c
+    {
+        text-align: center;
+        margin:1rem;
+        width:auto;
+    }
+
+}
+
+@media screen and (min-width: 700px)
+{
+
+    .Formulaire input
+    {
+        width:40%;
+        margin-top:0.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .Formulaire button
+    {
+        width:20%;
+        margin-right:0;
+    }
+    .Create_c
+    {
+        text-align: center;
+        margin:1rem;
+        width:auto;
+    }
+
+}
+
+@media screen and (min-width: 800px)
+{
+
+    .Formulaire input
+    {
+        width:30%;
+    }
+
+    .Formulaire button
+    {
+        width:13%;
+    }
+
+
+}
+
+@media screen and (min-width: 900px)
+{
+
+    .Formulaire input
+    {
+        width:20%;
+    }
+
+    .Formulaire button
+    {
+        width:10%;
+    }
+
+
 }
