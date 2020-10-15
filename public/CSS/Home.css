@@ -1,0 +1,166 @@
+main
+{
+    width:70%;
+    height:25rem;
+    margin:auto;
+    margin-top:5rem;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .Title
+{
+    text-align: center;
+}
+
+.Title h2
+{
+    font-size:0.8rem;
+}
+
+.Votes
+{
+    width:50%;
+    height:90%;
+    margin:auto;
+    text-align: center;
+    margin-top:3rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    align-items: flex-start;
+}
+
+.Votes table
+{
+    display:flex;
+    width:100%;
+    height:100%;
+    flex-direction: row;
+    border-collapse: separate;
+    justify-content: center;
+
+}
+
+.Votes td
+{
+    width:calc(100% / 3);
+    border:1px solid #FFF;
+    vertical-align: bottom;
+    padding:0.1rem;
+}
+
+.Votes .TdBarre
+{
+    padding:0.2rem;
+    height: 100%;
+}
+
+.Votes .Barre
+{
+    width:40%;
+    min-height:0.4rem;
+    max-height:10rem;
+    background-color: #ececec;
+    margin:auto;
+}
+
+.Votes .TD_BSubmit
+{
+    padding:0.5rem;
+}
+.Voter_Button
+{
+    padding:0.6rem;
+    border:none;
+    outline: none;
+    color:#FFF;
+    background-color: #c56183;
+    border-radius: 3px;
+}
+.Voter_Button:hover
+{
+    background-color: #794c74;
+    cursor:pointer;
+}
+
+@media screen and (min-width: 200px)
+{
+    .Votes
+    {
+        width:100%;
+        height:auto;
+    }
+    .Votes .Barre
+    {
+        width:60%;
+    }
+
+    .Voter_Button
+    {
+        width:50%;
+    }
+
+    main .Title
+    {
+        font-size:1rem;
+        height:10%;
+        padding:1rem;
+    }
+
+}
+
+@media screen and (min-width: 500px)
+{
+    .Votes
+    {
+        width:80%;
+    }
+    .Voter_Button
+    {
+        width:50%;
+    }
+    main .Title
+    {
+        font-size:1rem;
+        height:25%;
+
+        padding:0;
+    }
+}
+
+@media screen and (min-width: 700px)
+{
+    .Votes
+    {
+        width:70%;
+    }
+    .Votes .Barre
+    {
+        width:50%;
+    }
+    .Voter_Button
+    {
+        width:50%;
+    }
+}
+
+@media screen and (min-width: 800px)
+{
+
+    .Voter_Button
+    {
+        width:30%;
+    }
+}
+
+@media screen and (min-width: 900px)
+{
+
+    .Voter_Button
+    {
+        width:25%;
+    }
+}

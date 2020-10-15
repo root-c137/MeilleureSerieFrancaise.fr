@@ -8,6 +8,7 @@
 
 body
 {
+    height:100vh;
     font-family: "Ubuntu";
     font-weight:500;
     background-color: #FFF;

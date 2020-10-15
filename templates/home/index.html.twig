@@ -23,9 +23,9 @@
 
             <table>
                 <tr>
-                    <td><div class="Barre"></div></td>
+                    <td class="TdBarre"><div class="Barre"></div></td>
                     {% for Serie in Series %}
-                        <td><div class="Barre" style="height: {{ Serie.NbVote }}%;"></div></td>
+                        <td><div class="Barre" style="height: 100vh;"></div></td>
                     {% endfor %}
                 </tr>
 
@@ -33,7 +33,6 @@
                     {% for Serie in Series %}
                         <td><input type="radio" name="Vote" id="Serie" value="{{ Serie.id }}"/></td>
                     {% endfor %}
-
 
                 </tr>
 
@@ -44,11 +43,12 @@
                     {% endfor %}
 
                 </tr>
-
+                <tr>
+                    <td colspan="3" class="TD_BSubmit"><button class="Voter_Button" type="submit">Voter !</button></td>
+                </tr>
 
             </table>
 
-            <button type="submit">Voter !</button>
             </form>
 
         </section>
