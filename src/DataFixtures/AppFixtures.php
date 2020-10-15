@@ -43,6 +43,31 @@ class AppFixtures extends Fixture
 
         $manager->persist($Serie3);
 
+        $Serie4 = new Serie();
+        $Serie4->setAuteur("Kyan Khojandi et Bruno Muschio");
+        $Serie4->setNom("Engrenages");
+        $Serie4->setProposerPar("root");
+        $Serie4->setImg("engrenages.jpg" );
+
+        $manager->persist($Serie4);
+
+        $Serie5 = new Serie();
+        $Serie5->setAuteur("Kyan Khojandi et Bruno Muschio");
+        $Serie5->setNom("Hero Corp");
+        $Serie5->setProposerPar("root");
+        $Serie5->setImg("herocorp.jpg" );
+
+        $manager->persist($Serie5);
+
+        $Serie6 = new Serie();
+        $Serie6->setAuteur("Kyan Khojandi et Bruno Muschio");
+        $Serie6->setNom("Le bureau des légendes");
+        $Serie6->setProposerPar("root");
+        $Serie6->setImg("bureaudeslegendes.jpg" );
+
+        $manager->persist($Serie6);
+
+
 
 
         $manager->flush();

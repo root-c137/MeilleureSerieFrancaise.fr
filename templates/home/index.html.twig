@@ -18,14 +18,14 @@
 
         <section class="Votes">
 
-
+            <p>TOTAL : {{ Total }}</p>
             <form method="post" action="{{ path("NewVote") }}">
 
             <table>
                 <tr>
 
                     {% for Serie in Series %}
-                        <td class="TDBarre"><div class="Barre"  style="height: 100%;"></div></td>
+                        <td class="TDBarre"><div class="Barre"  style="height: {{ (Serie.getNbVote() / Total) * 100 }}%;"></div></td>
                     {% endfor %}
                 </tr>
 
@@ -45,7 +45,7 @@
                 </tr>
 
                 <tr>
-                    <td colspan="3" class="TD_BSubmit"><button class="Voter_Button" type="submit">Voter !</button> </td>
+                    <td colspan="6" class="TD_BSubmit"><button class="Voter_Button" type="submit">Voter !</button> </td>
                 </tr>
 
             </table>

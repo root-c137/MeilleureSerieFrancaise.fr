@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Serie;
 use App\Entity\Membre;
-use DateTime;
+use App\Entity\Votes;
+use DateTimeInterface;
+use phpDocumentor\Reflection\DocBlock\Tags\Author;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -16,10 +18,15 @@ class HomeController extends AbstractController
     public function index()
     {
         $Rep = $this->getDoctrine()->getRepository(Serie::class);
+        $Rep2 = $this->getDoctrine()->getRepository(Votes::class);
+
         $Series = $Rep->findBy(array(), array('Nb_Vote' => 'DESC'));
+        $Total = count($Rep2->findAll());
+
 
         return $this->render('home/index.html.twig', [
-            'Series' => $Series
+            'Series' => $Series,
+            'Total' => $Total
         ]);
     }
 
@@ -44,6 +51,8 @@ class HomeController extends AbstractController
 
         if($Mail != null && !empty($Pass) && !empty($_POST['Pseudo']) )
         {
+            $Em = $this->getDoctrine()->getManager();
+
             $HachPass = password_hash($Pass, PASSWORD_BCRYPT);
             $Membre = new Membre();
             $Membre->setIP($_SERVER['REMOTE_ADDR'])
@@ -52,9 +61,8 @@ class HomeController extends AbstractController
                 ->setMpH($Pass)
                 ->setPseudo($_POST['Pseudo']);
 
-
-            $Em = $this->getDoctrine()->getManager();
             $Em->persist($Membre);
+
             $Em->flush();
 
 
@@ -82,12 +90,18 @@ class HomeController extends AbstractController
 
         if(!empty($_POST['Vote']) )
         {
+            $Date = date_create()->format('Y-m-d H:i:s');
 
             $EM = $this->getDoctrine()->getManager();
-            $Serie = $EM->getRepository(Serie::class)->find($_POST['Vote']);
-            $NbVoteActuel = $Serie->getNbVote();
 
+            $Serie = $EM->getRepository(Serie::class)->find($_POST['Vote']);
+
+            $NbVoteActuel = $Serie->getNbVote();
             $Serie->setNbVote($NbVoteActuel+1);
+
+            $Vote = new Votes();
+            $Vote->setIp($_SERVER['REMOTE_ADDR']);
+            $EM->persist($Vote);
 
             $EM->flush();
 
