@@ -29,6 +29,13 @@
                     {% endfor %}
                 </tr>
 
+                <tr>
+
+                    {% for Serie in Series %}
+                        <td class="ImgSerie"><img src="{{ asset('/Imgs/'~Serie.Img) }}"/></td>
+                    {% endfor %}
+                </tr>
+
                 <tr class="Radio">
                     {% for Serie in Series %}
                         <td><input type="radio" name="Vote" id="Serie" value="{{ Serie.id }}"/></td>

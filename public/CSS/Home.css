@@ -13,6 +13,8 @@ main
 main .Title
 {
     text-align: center;
+    margin-top:19rem;
+
 }
 
 .Title h2
@@ -26,17 +28,19 @@ main .Title
     height:90%;
     margin:auto;
     text-align: center;
-    margin-top:3rem;
     display: flex;
     flex-direction: column;
+    margin-top:1.8rem;
 
 }
 
 .Votes form
 {
     width:100%;
-    height:270px;
+    height:410px;
     margin:auto;
+    margin-top:2rem;
+
 }
 .Votes table
 {
@@ -89,6 +93,10 @@ vertical-align: bottom;
     cursor:pointer;
 }
 
+.Votes .ImgSerie img
+{
+    width:30%;
+}
 
 .Votes .NbVotes
 {
