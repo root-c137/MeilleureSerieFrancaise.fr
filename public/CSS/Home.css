@@ -29,6 +29,7 @@ main .Title
     margin-top:3rem;
     display: flex;
     flex-direction: column;
+
 }
 
 .Votes form
@@ -71,6 +72,8 @@ vertical-align: bottom;
 {
     padding:0.5rem;
 }
+
+
 .Voter_Button
 {
     padding:0.6rem;
@@ -86,6 +89,11 @@ vertical-align: bottom;
     cursor:pointer;
 }
 
+
+.Votes .NbVotes
+{
+    font-size:0.8rem;
+}
 @media screen and (min-width: 200px)
 {
     main
@@ -107,6 +115,10 @@ vertical-align: bottom;
         width:60%;
     }
 
+    .NomsSeries
+    {
+        font-size:0.7rem;
+    }
     .Voter_Button
     {
         width:50%;
@@ -136,6 +148,10 @@ vertical-align: bottom;
     {
         width:50%;
     }
+    .NomsSeries
+    {
+        font-size:0.9rem;
+    }
     main .Title
     {
         font-size:1rem;
@@ -153,6 +169,10 @@ vertical-align: bottom;
     .Votes .Barre
     {
         width:50%;
+    }
+    .NomsSeries
+    {
+        font-size:1rem;
     }
     .Voter_Button
     {

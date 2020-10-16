@@ -18,7 +18,7 @@
 
         <section class="Votes">
 
-            <p>TOTAL : {{ Total }}</p>
+            <p>{{ Total }} votes au total</p>
             <form method="post" action="{{ path("NewVote") }}">
 
             <table>
@@ -41,7 +41,12 @@
                     {% for Serie in Series %}
                         <td>{{ Serie.nom }}</td>
                     {% endfor %}
+                </tr>
 
+                <tr>
+                    {% for Serie in Series %}
+                        <td class="NbVotes"> ({{ ((Serie.getNbVote() / Total) * 100)|round(2,'floor') }} %)</td>
+                    {% endfor %}
                 </tr>
 
                 <tr>

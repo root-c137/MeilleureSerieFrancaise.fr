@@ -109,10 +109,7 @@ class HomeController extends AbstractController
         else
         $E = 1;
 
-        return $this->render('Inscription/test.html.twig',
-            [
-                "e"=> $E
-            ]);
+        return $this->redirectToRoute('home');
     }
 
 
