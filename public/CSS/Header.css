@@ -1,215 +1,154 @@
 header
 {
-    width:100%;
-    display:flex;
+    display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    background-color: #39311d;
-    color:#FFF;
-    margin-top:2rem;
-}
-
-header ul
-{
-    width:100%;
-    display:flex;
-    flex-display: row;
     justify-content: center;
-    align-items: center;
-}
-
-header ul li
-{
-    width:25%;
-    text-align: center;
-    list-style: none;
-}
-
-#Header .Menu
-{
-    width:30%;
-    dispay:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-#Header .Connexion, .Formulaire
-{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding:0;
-}
-
-#Header .Formulaire
-{
-    width:60%;
-    padding-top:1rem;
-    justify-content: center;
-    margin:auto;
-}
-#Header .Formulaire input, .Formulaire button
-{
-    margin-right:1rem;
-    height:2rem;
-    border:none;
-    outline:none;
-    border-radius:4px;
-}
-
-#Header .Connexion button
-{
-    width:20%;
-    color:#686d76;
-    background-color:#FFF;
+    min-height:4rem;
+    background-color: #16a596;
     padding:0.2rem;
 }
-#Header .Connexion button:hover
+
+
+.Connexion
 {
-    color:#FFF;
-    background-color:#373a40;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.Connexion .Formulaire
+{
+    width:85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.Connexion .Formulaire input
+{
+    height:2.3rem;
+    margin:0.5rem;
+    outline:none;
+    border:1px solid #f9ecec;
+    font-size:1rem;
+}
+.Connexion .Formulaire input::placeholder
+{
+    font-size:1rem;
+}
+
+.Connexion .Formulaire .BConnexion
+{
+    border:none;
+    outline: none;
+    padding:0.7rem;
+    background-color:#f6f5f1;
+    border-radius:4px;
+}
+.Connexion .Formulaire .BConnexion:hover
+{
     cursor:pointer;
 }
 
-a
+.Connexion .BCreate_c
 {
-font-size:1rem;
+    text-align: center;
+    padding:0.5rem;
+    color:#f6f5f1;
     text-decoration: none;
-    color:#212121;
+}
+.Connexion .BCreate_c:hover
+{
+    color:#FFF;
 }
 
+@media screen and (min-width: 200px)
+{
+    .Connexion
+    {
+        flex-direction: column;
+    }
+
+    .Connexion .Formulaire
+    {
+        width: 100%;
+        flex-direction: column;
+    }
+    .Connexion .Formulaire input
+    {
+        width:100%;
+    }
+}
 @media screen and (min-width: 400px)
 {
-    header
-    {
-        height:auto;
-    }
-    #Header .Menu
-    {
-        display: none;
-    }
-    #Header .Connexion
-    {
-        width:100%;
-        flex-direction: column;
-    }
-    #Header .Formulaire
-    {
-        width:100%;
-        flex-direction: column;
 
-    }
-    #Header .Formulaire input
+    .Connexion .Formulaire
     {
-        width:80%;
-        margin-top:0.3rem;
-        margin-bottom: 0.5rem;
+        width: 85%;
     }
 
-    #Header .Formulaire button
+}
+@media screen and (min-width: 500px)
+{
+    .Connexion .Formulaire
     {
-        width:40%;
-        margin-right:0;
+        width: 80%;
     }
-    #Header .Create_c
-    {
-        text-align: center;
-        margin:1rem;
-    }
-
 }
 
 @media screen and (min-width: 600px)
 {
-    #Header .Menu
-    {
-        display: none;
-    }
-    #Header .Connexion
+    .Connexion .Formulaire
     {
         width:100%;
         flex-direction: row;
     }
-    #Header .Formulaire
-    {
-        flex-direction: row;
-        width:80%;
-    }
-    #Header .Formulaire input
-    {
-        width:80%;
-        margin-top:0.3rem;
-        margin-bottom: 0.5rem;
-    }
-
-    #Header .Formulaire button
-    {
-        width:40%;
-        margin-right:0;
-    }
-    #Header .Create_c
-    {
-        text-align: center;
-        margin:1rem;
-        width:auto;
-    }
-
 }
 
 @media screen and (min-width: 700px)
 {
-
-    #Header .Formulaire input
+    .Connexion .Formulaire
     {
-        width:40%;
-        margin-top:0.3rem;
-        margin-bottom: 0.5rem;
+        width:87%;
+        flex-direction: row;
     }
-
-    #Header .Formulaire button
-    {
-        width:20%;
-        margin-right:0;
-    }
-    #Header .Create_c
-    {
-        text-align: center;
-        margin:1rem;
-        width:auto;
-    }
-
-}
-
-@media screen and (min-width: 800px)
-{
-
-    #Header .Formulaire input
-    {
-        width:30%;
-    }
-
-    #Header .Formulaire button
-    {
-        width:13%;
-    }
-
-
 }
 
 @media screen and (min-width: 900px)
 {
-
-    #Header .Formulaire input
+    .Connexion
     {
-        width:20%;
+        flex-direction: row;
     }
-
-    #Header .Formulaire button
+    .Connexion .Formulaire
     {
-        width:10%;
+        width:70%;
     }
-
-
 }
+
+@media screen and (min-width: 1000px)
+{
+    .Connexion .Formulaire
+    {
+        width:50%;
+    }
+
+    .Connexion .Formulaire input
+    {
+        width:45%;
+    }
+}
+
+@media screen and (min-width: 1600px)
+{
+
+    .Connexion .Formulaire input
+    {
+        width:38%;
+    }
+}
+

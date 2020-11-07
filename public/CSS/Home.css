@@ -67,7 +67,7 @@ vertical-align: bottom;
 .Votes td .Barre
 {
     width:40%;
-    background-color: #c56183;
+    background-color: #16a596;
     margin:auto;
 
 }
@@ -84,12 +84,14 @@ vertical-align: bottom;
     border:none;
     outline: none;
     color:#FFF;
-    background-color: #c56183;
+    background-color: #898b8a;
     border-radius: 3px;
+    margin-top:1.5rem;
 }
 .Voter_Button:hover
 {
-    background-color: #794c74;
+    background-color: #f6f5f1;
+    color:#6D6F6E;
     cursor:pointer;
 }
 
