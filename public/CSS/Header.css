@@ -5,7 +5,7 @@ header
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #794c74;
+    background-color: #39311d;
     color:#FFF;
     margin-top:2rem;
 }
@@ -26,7 +26,7 @@ header ul li
     list-style: none;
 }
 
-.Menu
+#Header .Menu
 {
     width:30%;
     dispay:flex;
@@ -34,22 +34,23 @@ header ul li
     justify-content: center;
     align-items: center;
 }
-.Connexion, .Formulaire
+#Header .Connexion, .Formulaire
 {
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    padding:0;
 }
 
-.Formulaire
+#Header .Formulaire
 {
-    width:100%;
+    width:60%;
     padding-top:1rem;
     justify-content: center;
     margin:auto;
 }
-.Formulaire input, .Formulaire button
+#Header .Formulaire input, .Formulaire button
 {
     margin-right:1rem;
     height:2rem;
@@ -58,14 +59,14 @@ header ul li
     border-radius:4px;
 }
 
-.Connexion button
+#Header .Connexion button
 {
     width:20%;
     color:#686d76;
     background-color:#FFF;
     padding:0.2rem;
 }
-.Connexion button:hover
+#Header .Connexion button:hover
 {
     color:#FFF;
     background-color:#373a40;
@@ -85,34 +86,34 @@ font-size:1rem;
     {
         height:auto;
     }
-    .Menu
+    #Header .Menu
     {
         display: none;
     }
-    .Connexion
+    #Header .Connexion
     {
         width:100%;
         flex-direction: column;
     }
-    .Formulaire
+    #Header .Formulaire
     {
         width:100%;
         flex-direction: column;
 
     }
-    .Formulaire input
+    #Header .Formulaire input
     {
         width:80%;
         margin-top:0.3rem;
         margin-bottom: 0.5rem;
     }
 
-    .Formulaire button
+    #Header .Formulaire button
     {
         width:40%;
         margin-right:0;
     }
-    .Create_c
+    #Header .Create_c
     {
         text-align: center;
         margin:1rem;
@@ -122,33 +123,33 @@ font-size:1rem;
 
 @media screen and (min-width: 600px)
 {
-    .Menu
+    #Header .Menu
     {
         display: none;
     }
-    .Connexion
+    #Header .Connexion
     {
         width:100%;
         flex-direction: row;
     }
-    .Formulaire
+    #Header .Formulaire
     {
         flex-direction: row;
         width:80%;
     }
-    .Formulaire input
+    #Header .Formulaire input
     {
         width:80%;
         margin-top:0.3rem;
         margin-bottom: 0.5rem;
     }
 
-    .Formulaire button
+    #Header .Formulaire button
     {
         width:40%;
         margin-right:0;
     }
-    .Create_c
+    #Header .Create_c
     {
         text-align: center;
         margin:1rem;
@@ -160,19 +161,19 @@ font-size:1rem;
 @media screen and (min-width: 700px)
 {
 
-    .Formulaire input
+    #Header .Formulaire input
     {
         width:40%;
         margin-top:0.3rem;
         margin-bottom: 0.5rem;
     }
 
-    .Formulaire button
+    #Header .Formulaire button
     {
         width:20%;
         margin-right:0;
     }
-    .Create_c
+    #Header .Create_c
     {
         text-align: center;
         margin:1rem;
@@ -184,12 +185,12 @@ font-size:1rem;
 @media screen and (min-width: 800px)
 {
 
-    .Formulaire input
+    #Header .Formulaire input
     {
         width:30%;
     }
 
-    .Formulaire button
+    #Header .Formulaire button
     {
         width:13%;
     }
@@ -200,12 +201,12 @@ font-size:1rem;
 @media screen and (min-width: 900px)
 {
 
-    .Formulaire input
+    #Header .Formulaire input
     {
         width:20%;
     }
 
-    .Formulaire button
+    #Header .Formulaire button
     {
         width:10%;
     }
