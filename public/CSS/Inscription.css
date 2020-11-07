@@ -1,52 +1,45 @@
 #Inscription
 {
-    width:50%;
     margin:auto;
     margin-top:3rem;
 }
 
-
+#Inscription .Title
+{
+    text-align: center;
+    margin-bottom:2rem;
+}
 
 #Inscription .Formulaire
 {
-    width:100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding:2rem;
+    justify-content: space-between;
 }
 
 #Inscription .Formulaire form
 {
-    width:100%;
-}
-
-#Inscription .Formulaire table
-{
-    width:70%;
-    margin:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     text-align: center;
-    border-collapse: separate;
-    border-spacing: 10px;
 }
 
-#Inscription .Formulaire td
+
+
+#Inscription input
 {
-    width:50%;
-}
-#Inscription .Formulaire table input
-{
-    width:100%;
     height:2.3rem;
     border:1px solid #e0e0e0;
     outline: none;
     border-radius:4px;
+    margin-bottom:1rem;
 }
 
 #Inscription .GoInscription
 {
-    width:30%;
     height:2rem;
     margin-top:2rem;
     color:#FFF;
@@ -58,6 +51,127 @@
     cursor:pointer;
 }
 
+.GoInscription
+{
+    border:none;
+    outline: none;
+    background-color: #898b8a;
+}
 
+@media screen and (min-width: 200px)
+{
+    #Inscription, #Inscription .Formulaire, #Inscription form
+    {
+        width:100%;
+    }
+
+    #Inscription input
+    {
+        width:100%;
+    }
+
+    .GoInscription
+    {
+        width:80%;
+    }
+}
+
+@media screen and (min-width: 300px)
+{
+    .GoInscription
+    {
+        width:60%;
+    }
+}
+
+@media screen and (min-width: 400px)
+{
+
+    form
+    {
+        padding:2rem;
+    }
+    #Inscription input
+    {
+        width:100%;
+    }
+
+}
+
+@media screen and (min-width: 500px)
+{
+
+
+    #Inscription input
+    {
+        width:90%;
+    }
+
+    .GoInscription
+    {
+        width:40%;
+    }
+
+}
+
+@media screen and (min-width: 600px)
+{
+
+
+    #Inscription input
+    {
+        width:70%;
+    }
+
+    .GoInscription
+    {
+        width:30%;
+    }
+
+}
+
+@media screen and (min-width: 700px)
+{
+
+
+    #Inscription input
+    {
+        width:50%;
+    }
+    .GoInscription
+    {
+        width:20%;
+    }
+
+}
+
+@media screen and (min-width: 900px)
+{
+
+
+    #Inscription input
+    {
+        width:45%;
+    }
+
+
+
+}
+
+@media screen and (min-width: 1100px)
+{
+
+
+    #Inscription input
+    {
+        width:29%;
+    }
+
+    .GoInscription
+    {
+        width:17%;
+    }
+
+}
 
 

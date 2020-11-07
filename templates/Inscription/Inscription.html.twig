@@ -9,36 +9,19 @@
 
     <main id="Inscription">
 
-        <div>
 
-
-        </div>
-
+        <p class="Title">Inscrivez-vous pour pouvoir voter.</p>
         <div class="Formulaire">
 
             <form method="post" action="{{ path("NewMembre") }}">
 
-                <table>
-
-                    <tr>
-                        <td class="Label"><label for="Pseudo">Pseudo</label></td>
-                        <td><input type="text" name="Pseudo" id="Pseudo" /></td>
-                    </tr>
-
-                    <tr>
-                        <td class="Label"><label for="Mail">Adresse mail</label></td>
-                        <td><input type="text" name="Mail" id="Mail"/></td>
-                    </tr>
-                    <tr>
-                        <td class="Label"><label for="Pass">Mot de passe</label></td>
-                        <td><input type="password" name="Pass" id="Pass"/></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2"><button type="submit" class="GoInscription">Inscription</button></td>
-                    </tr>
-
-                </table>
+                <label for="Pseudo">Pseudo</label>
+                <input type="text" name="Pseudo" id="Pseudo" />
+                <label for="Mail">Adresse mail</label>
+                <input type="text" name="Mail" id="Mail"/>
+                <label for="Pass">Mot de passe</label>
+                <input type="password" name="Pass" id="Pass"/>
+                <button type="submit" class="GoInscription">Inscription</button>
 
             </form>
 
