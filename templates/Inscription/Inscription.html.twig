@@ -13,17 +13,7 @@
         <p class="Title">Inscrivez-vous pour pouvoir voter.</p>
         <div class="Formulaire">
 
-            <form method="post" action="{{ path("NewMembre") }}">
-
-                <label for="Pseudo">Pseudo</label>
-                <input type="text" name="Pseudo" id="Pseudo" />
-                <label for="Mail">Adresse mail</label>
-                <input type="text" name="Mail" id="Mail"/>
-                <label for="Pass">Mot de passe</label>
-                <input type="password" name="Pass" id="Pass"/>
-                <button type="submit" class="GoInscription">Inscription</button>
-
-            </form>
+           {{ form(Form) }}
 
 
         </div>

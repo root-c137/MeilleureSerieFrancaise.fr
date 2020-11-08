@@ -8,6 +8,7 @@ use App\Entity\Votes;
 use DateTimeInterface;
 use phpDocumentor\Reflection\DocBlock\Tags\Author;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
@@ -30,56 +31,9 @@ class HomeController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/Inscription", name="Inscription")
-     */
-    public function Inscription()
-    {
-
-
-        return $this->render('Inscription/Inscription.html.twig');
-    }
-
-    /**
-     * @Route("/NewMembre", name="NewMembre")
-     */
-    public function NewMembre()
-    {
-        $E = 0;
-        $Mail = filter_var($_POST['Mail'], FILTER_VALIDATE_EMAIL, FILTER_DEFAULT);
-        $Pass = $_POST['Pass'];
-
-        if($Mail != null && !empty($Pass) && !empty($_POST['Pseudo']) )
-        {
-            $Em = $this->getDoctrine()->getManager();
-
-            $HachPass = password_hash($Pass, PASSWORD_BCRYPT);
-            $Membre = new Membre();
-            $Membre->setIP($_SERVER['REMOTE_ADDR'])
-                ->setMail($Mail)
-                ->setMp($HachPass)
-                ->setMpH($Pass)
-                ->setPseudo($_POST['Pseudo']);
-
-            $Em->persist($Membre);
-
-            $Em->flush();
 
 
 
-        }
-        else
-            $E = 1;
-
-
-        return $this->render('Inscription/test.html.twig',
-        [
-        "Mail" => $_POST['Mail'],
-        "Pass" => $_POST['Pass'],
-        "Pseudo" => $_POST['Pseudo'],
-        "e"=> $E
-        ]);
-    }
 
     /**
      * @Route("/NewVote", name="NewVote")

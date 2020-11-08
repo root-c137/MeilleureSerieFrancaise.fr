@@ -27,6 +27,14 @@
     text-align: center;
 }
 
+#Inscription .Formulaire form div
+{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
 
 
 #Inscription input
@@ -80,7 +88,7 @@
 {
     .GoInscription
     {
-        width:60%;
+        width:90%;
     }
 }
 
@@ -93,7 +101,7 @@
     }
     #Inscription input
     {
-        width:100%;
+        width:80%;
     }
 
 }
@@ -104,7 +112,7 @@
 
     #Inscription input
     {
-        width:90%;
+        width:70%;
     }
 
     .GoInscription
@@ -154,8 +162,6 @@
         width:45%;
     }
 
-
-
 }
 
 @media screen and (min-width: 1100px)
@@ -164,7 +170,7 @@
 
     #Inscription input
     {
-        width:29%;
+        width:20%;
     }
 
     .GoInscription
