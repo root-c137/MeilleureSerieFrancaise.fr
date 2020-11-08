@@ -3,16 +3,24 @@ header
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     min-height:4rem;
     background-color: #16a596;
     padding:0.2rem;
 }
 
+header .Title a
+{
+    font-size:1rem;
+    color:#f9ecec;
+    text-decoration: none;
+    margin:1rem;
+    margin-left:10rem;
+}
+
 
 .Connexion
 {
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -21,7 +29,7 @@ header
 
 .Connexion .Formulaire
 {
-    width:85%;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -68,14 +76,15 @@ header
 
 @media screen and (min-width: 200px)
 {
-    .Connexion
+    .Connexion, header
     {
+        width:100%;
         flex-direction: column;
     }
 
     .Connexion .Formulaire
     {
-        width: 100%;
+        width: 70%;
         flex-direction: column;
     }
     .Connexion .Formulaire input
@@ -86,69 +95,94 @@ header
 @media screen and (min-width: 400px)
 {
 
-    .Connexion .Formulaire
+    .Connexion .Formulaire input
     {
-        width: 85%;
+        width:90%;
     }
 
 }
 @media screen and (min-width: 500px)
 {
-    .Connexion .Formulaire
+    .Connexion .Formulaire input
     {
-        width: 80%;
+        width:80%;
     }
 }
 
 @media screen and (min-width: 600px)
 {
-    .Connexion .Formulaire
+    .Connexion .Formulaire input
     {
-        width:100%;
-        flex-direction: row;
+        width:70%;
     }
+
 }
 
 @media screen and (min-width: 700px)
 {
-    .Connexion .Formulaire
+    .Connexion .Formulaire input
     {
-        width:87%;
-        flex-direction: row;
+        width:55%;
     }
+
 }
 
 @media screen and (min-width: 900px)
 {
-    .Connexion
+    .Connexion .Formulaire, .Connexion
+    {
+        width:100%;
+        flex-direction: row;
+    }
+
+    header
     {
         flex-direction: row;
     }
-    .Connexion .Formulaire
+    .Connexion .Formulaire input
     {
-        width:70%;
+        width:100%;
     }
 }
 
 @media screen and (min-width: 1000px)
 {
+
     .Connexion .Formulaire
     {
-        width:50%;
+        width:60%;
     }
-
     .Connexion .Formulaire input
     {
-        width:45%;
+        width:90%;
     }
+
+
 }
 
-@media screen and (min-width: 1600px)
+@media screen and (min-width: 1100px)
 {
 
     .Connexion .Formulaire input
     {
-        width:38%;
+        width:100%;
+    }
+}
+@media screen and (min-width: 1500px)
+{
+
+    .Connexion .Formulaire input
+    {
+        width:30%;
+    }
+}
+
+@media screen and (min-width: 2000px)
+{
+
+    .Connexion .Formulaire input
+    {
+        width:20%;
     }
 }
 

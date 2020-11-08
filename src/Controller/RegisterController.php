@@ -58,9 +58,7 @@ class RegisterController extends AbstractController
         else
             $E = 1;
 
-        return $this->redirectToRoute('home', [
-            'Err' => $E
-        ]);
+        return $this->redirectToRoute('home');
     }
 }
 

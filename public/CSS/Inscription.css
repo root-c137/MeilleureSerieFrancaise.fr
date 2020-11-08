@@ -95,10 +95,7 @@
 @media screen and (min-width: 400px)
 {
 
-    form
-    {
-        padding:2rem;
-    }
+
     #Inscription input
     {
         width:80%;
@@ -170,6 +167,38 @@
 
     #Inscription input
     {
+        width:40%;
+    }
+
+    .GoInscription
+    {
+        width:17%;
+    }
+
+}
+
+@media screen and (min-width: 1200px)
+{
+
+
+    #Inscription input
+    {
+        width:28%;
+    }
+
+    .GoInscription
+    {
+        width:17%;
+    }
+
+}
+
+@media screen and (min-width: 1500px)
+{
+
+
+    #Inscription input
+    {
         width:20%;
     }
 
@@ -179,5 +208,22 @@
     }
 
 }
+
+@media screen and (min-width: 2000px)
+{
+
+
+    #Inscription input
+    {
+        width:10%;
+    }
+
+    .GoInscription
+    {
+        width:17%;
+    }
+
+}
+
 
 
