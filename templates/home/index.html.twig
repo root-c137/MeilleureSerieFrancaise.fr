@@ -36,9 +36,9 @@
                     {% endfor %}
                 </tr>
 
-                <tr class="Radio">
+                <tr>
                     {% for Serie in Series %}
-                        <td><input type="radio" name="Vote" id="Serie" value="{{ Serie.id }}"/></td>
+                        <td><label class="Container"><input type="radio" name="Vote" id="Serie" value="{{ Serie.id }}"/><span class="RadioCustom"><img class="CheckImg" src="{{ asset('/Imgs/Coche.png') }}"/></span></label></td>
                     {% endfor %}
 
                 </tr>

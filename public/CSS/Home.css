@@ -43,7 +43,6 @@ main .Title
     height:410px;
     margin:auto;
 
-
 }
 .Votes table
 {
@@ -55,13 +54,13 @@ main .Title
 
 .Votes td
 {
-   height:10%;
+    height:10%;
 }
 
 .Votes .TDBarre
 {
-height:90%;
-vertical-align: bottom;
+    height:90%;
+    vertical-align: bottom;
 
 }
 
@@ -80,6 +79,7 @@ vertical-align: bottom;
 .TotalVote
 {
     font-size:1rem;
+
 }
 
 .Voter_Button
@@ -107,6 +107,83 @@ vertical-align: bottom;
 .Votes .NbVotes
 {
     font-size:0.8rem;
+}
+
+
+.Container
+{
+    display: block;
+    position: relative;
+    height:3rem;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+.Container input
+{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+}
+
+.Container .RadioCustom
+{
+    position: absolute;
+    top: 0;
+    left: calc(50% - 1rem);
+    margin:auto;
+    width: 2rem;
+    height:2rem;
+    background-color: #eee;
+
+}
+
+.Container:hover input ~ .RadioCustom {
+    background-color: #ccc;
+}
+
+.Container input:checked ~ .RadioCustom
+{
+    background-color: #16a596;
+}
+
+.RadioCustom:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.Container input:checked ~ .RadioCustom:after {
+    display: block;
+}
+
+.Container .RadioCustom:after
+{
+    top:  calc(50% - 20px);
+    left: calc(50% - 20px);
+    width: 20px;
+    height: 20px;
+}
+
+.CheckImg
+{
+    display:none;
+    width: 20px;
+    height: 20px;
+    margin:auto;
+    margin-top:3px;
+}
+
+.Container input:checked ~ .RadioCustom .CheckImg
+{
+    display: block;
 }
 
 @media screen and (min-width: 200px)
