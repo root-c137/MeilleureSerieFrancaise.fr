@@ -1,18 +1,26 @@
 main
 {
     margin:auto;
-    margin-top:5rem;
     display:flex;
     flex-direction:column;
-
 }
 
 main .Title
 {
+    height:10rem;
     text-align: center;
     margin:auto;
+    background-color: #16a596;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+.Title h1, .Title h2
+{
+    color: #fff;
+}
 .Title h2
 {
     font-size:0.8rem;
@@ -80,7 +88,7 @@ vertical-align: bottom;
     border:none;
     outline: none;
     color:#FFF;
-    background-color: #898b8a;
+    background-color: #16a596;
     border-radius: 3px;
     margin-top:1.5rem;
 }
@@ -207,10 +215,7 @@ vertical-align: bottom;
 @media screen and (min-width: 600px)
 {
 
-    main .Title
-    {
-        width:90%;
-    }
+
 
     .Votes .ImgSerie img
     {
@@ -226,10 +231,6 @@ vertical-align: bottom;
 @media screen and (min-width: 700px)
 {
 
-    main .Title
-    {
-        width:70%;
-    }
 
     .Votes td .Barre
     {
@@ -240,10 +241,6 @@ vertical-align: bottom;
 @media screen and (min-width: 800px)
 {
 
-    main .Title
-    {
-        width:60%;
-    }
 
     .Votes td .Barre
     {
@@ -254,10 +251,6 @@ vertical-align: bottom;
 @media screen and (min-width: 1000px)
 {
 
-    main .Title
-    {
-        width:50%;
-    }
 
     main .Votes
     {
