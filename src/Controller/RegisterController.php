@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Membre;
+use App\Entity\User;
 use App\Form\RegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,12 +16,11 @@ class RegisterController extends AbstractController
      */
     public function index()
     {
-        $Membre = new Membre();
-        $Form = $this->createForm(RegisterType::class, $Membre, [
+        $User = new User();
+        $Form = $this->createForm(RegisterType::class, $User, [
             'action' => $this->generateUrl('NewMembre'),
             'method' => 'POST'
         ]);
-
 
 
         return $this->render('Inscription/Inscription.html.twig',[
@@ -33,11 +33,10 @@ class RegisterController extends AbstractController
      */
     public function NewMembre(Request $Requette)
     {
-        $Membre = new Membre();
-        $Form = $this->createForm(RegisterType::class, $Membre);
+        $User = new User();
+        $Form = $this->createForm(RegisterType::class, $User);
 
         $Doctrine = $this->getDoctrine()->getManager();
-
         $Form->handleRequest($Requette);
 
 
@@ -46,13 +45,13 @@ class RegisterController extends AbstractController
 
         if($Form->isSubmitted() && $Form->isValid() )
         {
-            $Membre = $Form->getData();
-            $Membre->setIp($_SERVER['REMOTE_ADDR']);
-            $Membre->setMpH($Form->get('Mp')->getData() );
+            $User = $Form->getData();
+            $User->setIp($_SERVER['REMOTE_ADDR']);
+            $User->setMpH($Form->get('password')->getData() );
 
             $Doctrine = $this->getDoctrine()->getManager();
 
-            $Doctrine->persist($Membre);
+            $Doctrine->persist($User);
             $Doctrine->flush();;
         }
         else

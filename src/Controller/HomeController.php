@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Serie;
 use App\Entity\Membre;
+use App\Entity\User;
 use App\Entity\Votes;
+use App\Form\RegisterType;
 use DateTimeInterface;
 use phpDocumentor\Reflection\DocBlock\Tags\Author;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,6 +25,8 @@ class HomeController extends AbstractController
 
         $Series = $Rep->findBy(array(), array('Nb_Vote' => 'DESC'));
         $Total = count($Rep2->findAll());
+
+
 
 
         return $this->render('home/index.html.twig', [

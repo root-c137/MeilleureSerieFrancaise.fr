@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ConnexionController extends AbstractController
 {
     /**
-     * @Route("/connexion", name="connexion")
+     * @Route("/connexion", name="Connexio")
      */
     public function index(Request $Requette)
     {

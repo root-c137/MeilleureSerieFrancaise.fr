@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Membre;
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -16,14 +16,10 @@ class RegisterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Pseudo', TextType::class, [
-                'label' => 'Pseudo'
-
-            ])
-            ->add('Mail', TextType::class, [
+            ->add('email', TextType::class, [
                 'label' => 'Adresse mail'
             ])
-            ->add('Mp', RepeatedType::class, [
+            ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'invalid_message' => "Les mots de passe ne sont pas identiques.",
                 'label' => 'Mot de passe',
@@ -44,7 +40,7 @@ class RegisterType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Membre::class,
+            'data_class' => User::class,
         ]);
     }
 }
