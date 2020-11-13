@@ -21,6 +21,16 @@
     margin-top:3rem;
 }
 
+.Connexion
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom:1px solid lightgray;
+}
+
 #LogginPage .Title
 {
     text-align: center;
@@ -51,28 +61,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    text-align: center;
 }
 
 .Connexion form
 {
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-#Inscription .Formulaire form div, .Connexion form
+#Inscription .Formulaire form div
 {
     width:100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    text-align: left;
 }
 
-.Connexion form
-{
-    flex-direction: row;
-    justify-content: center;
-}
 
 
 #Inscription input, .Connexion input
@@ -84,6 +89,11 @@
     margin-bottom:1rem;
 }
 
+.Connexion input
+{
+    margin-bottom: 0px;
+}
+
 .Connexion label
 {
     display: flex;
@@ -91,7 +101,6 @@
     height:2.3rem;
     justify-content: center;
     align-items: center;
-    margin-bottom:1rem;
 }
 
 .Connexion .LabelPassword
@@ -99,7 +108,7 @@
     margin-left:2rem;
 }
 
-#Inscription .GoInscription
+#Inscription .GoInscription, .GoConnexion
 {
     height:2rem;
     margin-top:2rem;
@@ -107,7 +116,6 @@
     border:none;
     outline: none;
     background-color:#16a596;
-
 }
 #Inscription .GoInscription:hover
 {
@@ -115,13 +123,13 @@
     cursor:pointer;
 }
 
-.Connexion
+.GoConnexion
 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-top:0;
+    padding:0.3rem;
 }
+
+
 
 @media screen and (min-width: 200px)
 {
@@ -130,7 +138,7 @@
         width:100%;
     }
 
-    #Inscription input
+    #Inscription input, .Connexion input
     {
         width:100%;
     }
@@ -139,6 +147,18 @@
     {
         width:80%;
     }
+
+    .Connexion form
+    {
+        width:100%;
+        flex-direction: column;
+    }
+
+    .GoConnexion
+    {
+        margin-top:1rem;
+    }
+
 }
 
 @media screen and (min-width: 300px)
@@ -153,7 +173,7 @@
 {
 
 
-    #Inscription input
+    #Inscription input, .Connexion input
     {
         width:80%;
     }
@@ -164,7 +184,7 @@
 {
 
 
-    #Inscription input
+    #Inscription input, .Connexion input
     {
         width:70%;
     }
@@ -180,7 +200,7 @@
 {
 
 
-    #Inscription input
+    #Inscription input, .Connexion input
     {
         width:70%;
     }
@@ -196,7 +216,7 @@
 {
 
 
-    #Inscription input
+    #Inscription input, .Connexion input
     {
         width:50%;
     }
@@ -211,7 +231,7 @@
 {
 
 
-    #Inscription input
+    #Inscription input, .Connexion input
     {
         width:45%;
     }
@@ -222,7 +242,7 @@
 {
 
 
-    #Inscription input
+    #Inscription input, .Connexion input
     {
         width:40%;
     }
@@ -248,6 +268,22 @@
         width:17%;
     }
 
+    .Connexion form
+    {
+        width:50%;
+        flex-direction: row;
+        margin-left:5rem;
+    }
+    .Connexion input
+    {
+        width:100%;
+    }
+    .GoConnexion
+    {
+        margin-top:0;
+        margin-left:1rem;
+    }
+
 }
 
 @media screen and (min-width: 1500px)
@@ -262,6 +298,10 @@
     .GoInscription
     {
         width:17%;
+    }
+    .Connexion form
+    {
+        width: 40%;
     }
 
 }
@@ -278,6 +318,10 @@
     .GoInscription
     {
         width:17%;
+    }
+
+    .Connexion form {
+        width: 30%;
     }
 
 }
