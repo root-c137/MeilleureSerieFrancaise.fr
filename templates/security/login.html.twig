@@ -26,10 +26,15 @@
                     </div>
                 {% endif %}
 
-                <label for="inputEmail">Email</label>
-                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-                <label class="LabelPassword" for="inputPassword">Password</label>
-                <input type="password" name="password" id="inputPassword" class="form-control" required>
+                <div class="FormGroup" >
+                    <input type="email" value="{{ last_username }}" name="email" placeholder="adresse mail" id="inputEmail" class="FormControl" required>
+                    <label for="inputEmail" class="FormLabel">Email</label>
+                </div>
+
+                <div class="FormGroup" >
+                    <input type="password" name="password" id="inputPassword" placeholder="mot de passe" class="FormControl" required>
+                    <label for="inputPassword" class="FormLabel">Password</label>
+                </div>
 
                 <input type="hidden" name="_csrf_token"
                        value="{{ csrf_token('authenticate') }}"

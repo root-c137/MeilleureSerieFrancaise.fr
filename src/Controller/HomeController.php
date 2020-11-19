@@ -26,12 +26,18 @@ class HomeController extends AbstractController
         $Series = $Rep->findBy(array(), array('Nb_Vote' => 'DESC'));
         $Total = count($Rep2->findAll());
 
+        $VoteNull = false;
 
-
+        if($Total == 0)
+        {
+            $Total = 1;
+            $VoteNull = true;
+        }
 
         return $this->render('home/index.html.twig', [
             'Series' => $Series,
-            'Total' => $Total
+            'Total' => $Total,
+            'VoteNull' => $VoteNull
         ]);
     }
 
