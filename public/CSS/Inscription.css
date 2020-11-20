@@ -1,9 +1,11 @@
 #LogginPage
 {
     display: flex;
+    width:100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 #LogginPage h2
@@ -11,25 +13,30 @@
     margin-bottom:2rem;
 }
 
-#Inscription
+.Container_Connexion_Inscription
+{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+#Inscription, .Connexion
+
 {
     width:100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top:3rem;
 }
 
 .Connexion
 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 2rem;
-    border-bottom:1px solid lightgray;
+    border-right: 1px solid #ccc;
 }
+
 
 #LogginPage .Title
 {
@@ -55,37 +62,34 @@
 
 }
 
+#Inscription .Formulaire div
+{
+    margin:auto;
+
+}
 #Inscription .Formulaire form, .Connexion form
 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .Connexion form
 {
     justify-content: center;
     align-items: center;
-}
-
-#Inscription .Formulaire form div
-{
     width:100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
+
 }
 
 
 
-#Inscription input, .FormControl
+.FormControl
 {
     height:2.3rem;
     border:1px solid #e0e0e0;
     outline: none;
-    border-radius:4px;
     margin-bottom:1rem;
 }
 
@@ -95,6 +99,12 @@
 {
     margin-bottom: 1rem;
     transition: all .3s;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+
 }
 
 .FormLabel
@@ -113,7 +123,6 @@
     box-shadow: none;
     width:100%;
     border-color: #ccc;
-    border-style: none none solid none;
     transition:all .5s;
     padding:5px;
 }
@@ -125,18 +134,18 @@
 .FormControl:focus + .FormLabel,
 .FormControl:not(:placeholder-shown) + .FormLabel
 {
-    transform:translateY(-4.5em) scale(.8);
+    transform:translateY(-4.5em);
 }
 
 .FormControl:focus
 {
     box-shadow:none;
     outline:none;
-    border-color:orange;
+    border-color: #16a596;
 }
 .FormGroup:focus-within
 {
-    transform:scale(1.05, 1.05);
+
 }
 
 
@@ -147,7 +156,7 @@
 
 }
 
-#Inscription .GoInscription, .GoConnexion
+.GoInscription, .GoConnexion
 {
     height:2rem;
     margin-top:2rem;
@@ -156,7 +165,7 @@
     outline: none;
     background-color:#16a596;
 }
-#Inscription .GoInscription:hover
+ .GoInscription:hover
 {
     background-color: #138f82;
     cursor:pointer;
@@ -168,202 +177,177 @@
     padding:0.3rem;
 }
 
-
-
 @media screen and (min-width: 200px)
 {
-    #Inscription, #Inscription .Formulaire, #Inscription form
+    .Container_Connexion_Inscription
     {
-        width:100%;
-    }
-
-    #Inscription input, .Connexion input
-    {
-        width:100%;
-    }
-
-    .GoInscription
-    {
-        width:80%;
-    }
-
-    .Connexion form
-    {
-        width:100%;
         flex-direction: column;
     }
 
-    .GoConnexion
+    #Inscription .Formulaire, .Connexion
     {
-        margin-top:1rem;
+        width:100%;
     }
 
-}
+    .FormControl
+    {
+        width:100%;
+    }
 
-@media screen and (min-width: 300px)
-{
-    .GoInscription
+    .FormControl:focus + .FormLabel,
+    .FormControl:not(:placeholder-shown) + .FormLabel
+    {
+        transform:translateY(-4.5em);
+    }
+
+    .GoConnexion, .GoInscription
     {
         width:90%;
     }
 }
 
-@media screen and (min-width: 400px)
+@media screen and (min-width: 300px)
 {
-
-
-    #Inscription input
+    .FormControl
     {
         width:80%;
     }
-
+    .GoConnexion, .GoInscription
+    {
+        width:70%;
+    }
 }
 
 @media screen and (min-width: 500px)
 {
-
-
-    #Inscription input
+    .FormControl
     {
         width:70%;
     }
-
-    .GoInscription
+    .GoConnexion, .GoInscription
     {
-        width:40%;
+        width:60%;
     }
-
 }
 
 @media screen and (min-width: 600px)
 {
-
-
-    #Inscription input
+    .FormControl
     {
-        width:70%;
+        width:60%;
     }
-
-    .GoInscription
+    .GoConnexion, .GoInscription
     {
-        width:30%;
+        width:40%;
     }
-
 }
 
 @media screen and (min-width: 700px)
 {
-
-
-    #Inscription input
+    .FormControl
     {
         width:50%;
     }
-    .GoInscription
+    .GoConnexion, .GoInscription
     {
-        width:20%;
+        width:30%;
     }
-
 }
 
-@media screen and (min-width: 900px)
+@media screen and (min-width: 800px)
 {
-
-
-    #Inscription input
-    {
-        width:45%;
-    }
-
-}
-
-@media screen and (min-width: 1100px)
-{
-
-
-    #Inscription input
+    .FormControl
     {
         width:40%;
     }
-
-    .GoInscription
-    {
-        width:17%;
-    }
-
 }
 
-@media screen and (min-width: 1200px)
+
+@media screen and (min-width: 900px)
 {
-
-
-    #Inscription input
+    .Container_Connexion_Inscription
     {
-        width:28%;
-    }
-
-    .GoInscription
-    {
-        width:17%;
-    }
-
-    .Connexion form
-    {
-        width:50%;
         flex-direction: row;
-        margin-left:5rem;
     }
-    .Connexion input
+    .FormControl
     {
-        width:100%;
-    }
-    .GoConnexion
-    {
-        margin-top:0;
-        margin-left:1rem;
+        width:70%;
     }
 
+    .GoConnexion, .GoInscription
+    {
+        width:40%;
+    }
 }
 
-@media screen and (min-width: 1500px)
+@media screen and (min-width: 1000px)
 {
+    .Container_Connexion_Inscription
+    {
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+    }
 
+    #Inscription, .Connexion
+    {
+        width:30%;
+    }
+    .FormControl
+    {
+        width:88%;
+    }
+    .GoConnexion, .GoInscription
+    {
+        width:60%;
+    }
+}
 
-    #Inscription input
+@media screen and (min-width: 1300px)
+{
+    .Container_Connexion_Inscription
+    {
+        flex-direction: row;
+    }
+
+    .GoConnexion, .GoInscription
     {
         width:20%;
     }
-
-    .GoInscription
+    #Inscription, .Connexion
     {
-        width:17%;
+        width:40%;
     }
-    .Connexion form
+    .FormControl
     {
-        width: 40%;
+        width:68%;
     }
-
+    .GoConnexion, .GoInscription
+    {
+        width:60%;
+    }
 }
 
-@media screen and (min-width: 2000px)
+@media screen and (min-width: 1600px)
 {
-
-
-    #Inscription input
+    .Container_Connexion_Inscription
     {
-        width:10%;
+        flex-direction: row;
     }
-
-    .GoInscription
+    #Inscription, .Connexion
     {
-        width:17%;
+        width:30%;
     }
-
-    .Connexion form {
-        width: 30%;
+    .FormControl
+    {
+        width:70%;
     }
-
+    .GoConnexion, .GoInscription
+    {
+        width:40%;
+    }
 }
+
 
 
 

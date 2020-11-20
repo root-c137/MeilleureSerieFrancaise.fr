@@ -17,15 +17,32 @@ class RegisterType extends AbstractType
     {
         $builder
             ->add('email', TextType::class, [
-                'label' => 'Adresse mail'
+                'label' => 'Adresse mail',
+                'attr' => [
+                    'class' => 'FormControl',
+                    'placeholder' => 'Adresse mail'
+                     ],
+                'label_attr' => [
+                    'class' => 'FormLabel'
+                ]
             ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'invalid_message' => "Les mots de passe ne sont pas identiques.",
                 'label' => 'Mot de passe',
                 'required' => true,
-                'first_options' => ['label' => 'Votre mot de passe'],
-                'second_options' => ['label' => 'Confirmez votre mot de passe']
+                'first_options' => [
+                    'label' => 'Votre mot de passe',
+                    'attr' => [
+                        'placeholder' => 'mot de passe..'
+                    ]
+                ],
+                'second_options' => [
+                    'label' => 'Confirmez votre mot de passe',
+                    'attr' => [
+                        'placeholder' => 'répetez le mot de passe'
+                    ]],
+
             ])
 
             ->add('submit', SubmitType::class, [
