@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Serie;
+use App\Entity\User;
 use DateTime;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -16,7 +17,7 @@ class AppFixtures extends Fixture
 
         $Date = DateTime::createFromFormat('Y-m-d', 'H:i:s');
 
-
+        //Création des séries...
         $Serie = new Serie();
         $Serie->setAuteur("Alexandre Astier");
         $Serie->setNom("Kaameloot");
@@ -67,7 +68,16 @@ class AppFixtures extends Fixture
 
         $manager->persist($Serie6);
 
+        //Fin de la création des séries....
 
+        $remote = isset($_SERVER["REMOTE_ADDR"]) ? $_SERVER["REMOTE_ADDR"] : '127.0.0.1';
+
+        $User = new User();
+        $User->setEmail('rootem21@gmail.com');
+        $User->setPassword("password");
+        $User->setMpH(' ');
+        $User->setIp($remote );
+        $manager->persist($User);
 
 
         $manager->flush();

@@ -18,15 +18,17 @@
         <h2>Connexion</h2>
 
             <form method="post">
+                <div id="Err">
                 {% if error %}
                     <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                 {% endif %}
 
                 {% if app.user %}
                     <div class="mb-3">
-                        You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Deconnexion</a>
+                       Vous êtes logé avec : {{ app.user.username }}, <a href="{{ path('app_logout') }}">Deconnexion</a>
                     </div>
                 {% endif %}
+                </div>
 
                 <div class="FormGroup" >
                     <input type="email" value="{{ last_username }}" name="email" placeholder="adresse mail" id="inputEmail" class="FormControl" required>
@@ -68,8 +70,7 @@
 
         <div class="Formulaire">
 
-
-
+            {{ form_start(Form) }}
 
             <div class="FormGroup">
                 {{ form_widget(Form.email) }}
@@ -118,6 +119,8 @@
             </div>
 
             {{ form_widget(Form.submit) }}
+
+            {{ form_end(Form) }}
         </div>
 
     </section>
