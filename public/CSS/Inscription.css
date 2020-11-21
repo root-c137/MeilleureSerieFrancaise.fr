@@ -75,11 +75,12 @@
     justify-content: center;
 }
 
-.Connexion form
+.Connexion form, #Inscription form
 {
     justify-content: center;
     align-items: center;
     width:100%;
+    margin-top:3rem;
 
 }
 
@@ -182,6 +183,12 @@
     margin-top:0;
     padding:0.3rem;
 }
+
+.ErrorMsg
+{
+    color:#FF7F7F;
+}
+
 
 @media screen and (min-width: 200px)
 {
@@ -286,10 +293,7 @@
     }
 }
 
-#Err
-{
-    margin-bottom: 2rem;
-}
+
 @media screen and (min-width: 1000px)
 {
     .Container_Connexion_Inscription

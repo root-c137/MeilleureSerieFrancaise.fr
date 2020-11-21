@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Length;
+use Webmozart\Assert\Assert;
 
 class RegisterType extends AbstractType
 {
@@ -20,10 +21,6 @@ class RegisterType extends AbstractType
         $builder
             ->add('email', EmailType::class, [
                 'label' => 'Adresse mail',
-                'constraints' => new Length([
-                    'min' => 2,
-                    'max' => 60
-                ]),
                 'attr' => [
                     'class' => 'FormControl',
                     'placeholder' => 'Adresse mail'

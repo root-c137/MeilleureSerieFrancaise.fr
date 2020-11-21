@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Errors\Error;
 use App\Form\RegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,6 +20,8 @@ class SecurityController extends AbstractController
         // if ($this->getUser()) {
         //     return $this->redirectToRoute('target_path');
         // }
+        //On récupère le msg d'erreur, si il y en a, sinon = null..
+        $Err = $this->get('session')->getFlashBag()->get('Err');
 
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
@@ -35,7 +38,8 @@ class SecurityController extends AbstractController
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,
             'error' => $error,
-            'Form' => $Form->createView()
+            'Form' => $Form->createView(),
+            'Err' => $Err
         ]);
     }
 

@@ -37,7 +37,7 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'Series' => $Series,
             'Total' => $Total,
-            'VoteNull' => $VoteNull
+            'VoteNull' => $VoteNull,
         ]);
     }
 
