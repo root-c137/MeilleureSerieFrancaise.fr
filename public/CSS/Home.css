@@ -79,7 +79,8 @@ main .Title
 .TotalVote
 {
     font-size:1rem;
-
+    margin-top:1rem;
+    font-weight: bold;
 }
 
 .Voter_Button

@@ -36,6 +36,8 @@
                 <div class="FormGroup" >
                     <input type="password" name="password" id="inputPassword" placeholder="mot de passe" class="FormControl" required>
                     <label for="inputPassword" class="FormLabel">Password</label>
+                    <a href="#" class="HelpPassword">Mot de passe oublié ?</a>
+
                 </div>
 
                 <input type="hidden" name="_csrf_token"
@@ -72,6 +74,7 @@
             <div class="FormGroup">
                 {{ form_widget(Form.email) }}
                 {{ form_label(Form.email) }}
+
             </div>
 
             <div class="FormGroup">
