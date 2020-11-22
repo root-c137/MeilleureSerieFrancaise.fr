@@ -9,7 +9,10 @@ use App\Form\RegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
+use Symfony\Component\Security\Http\SecurityEvents;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -87,14 +90,15 @@ class RegisterController extends AbstractController
 
             $Doctrine->persist($User);
             $Doctrine->flush();;
+
+            //Permet de logé l'user directement..
+
             return $this->redirectToRoute('home');
         }
         else
         {
             $ErrorMsg = $Errors[0]->getMessage();
 
-            $E = new Error();
-            $E->setMessage($ErrorMsg);
 
             //Stock temporairement le msg d'erreur dans la session Flash..
             $this->addFlash('Err', $ErrorMsg);

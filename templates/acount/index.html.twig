@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Compte - MeilleureSerieFrancaise.fr{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("CSS/Acount.css")  }}"/>
+{% endblock %}
+
+{% block body %}
+
+    <section id="Acount">
+
+        <h1>Informations personnelle</h1>
+
+        <table>
+
+            <tr>
+                <td>Adresse  mail : </td>
+                <td>{{ app.user.email }}</td>
+            </tr>
+            <tr>
+                <td>Mot de passe : </td>
+                <td>****** <a href="#">modifier le mot de passe</a></td>
+            </tr>
+
+        </table>
+
+    </section>
+
+{% endblock %}
