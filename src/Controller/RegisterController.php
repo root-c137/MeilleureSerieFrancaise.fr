@@ -7,11 +7,13 @@ use App\Entity\Membre;
 use App\Entity\User;
 use App\Errors\Error;
 use App\Form\RegisterType;
+use App\Security\LoginFormAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 use Symfony\Component\Security\Http\SecurityEvents;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
@@ -58,7 +60,8 @@ class RegisterController extends AbstractController
     /**
      * @Route("/NewMembre", name="NewMembre")
      */
-    public function NewMembre(Request $Requette, UserPasswordEncoderInterface $Encoder, ValidatorInterface $Validator)
+    public function NewMembre(Request $Requette, UserPasswordEncoderInterface $Encoder, ValidatorInterface $Validator,
+                              GuardAuthenticatorHandler $guard, LoginFormAuthenticator $login)
     {
         //Permet de tester si le mail est valide...
         $EmailConstraint = new Assert\Email();
@@ -97,8 +100,8 @@ class RegisterController extends AbstractController
                 $Doctrine->persist($User);
                 $Doctrine->flush();;
 
+                return $guard->authenticateUserAndHandleSuccess($User,$Requette,$login,'main');
 
-                return $this->redirectToRoute('home');
             }
             else {
                 $this->addFlash("Error", "Un compte existe déjà avec cette adresse mail");
