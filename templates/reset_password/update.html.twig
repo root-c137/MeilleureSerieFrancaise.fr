@@ -10,11 +10,60 @@
 {% endblock %}
 
 {% block body %}
-    <section class="Connexion">
+    <section id="Inscription" class="ResetPassword" >
 
-        <h2>UPDATE PASSWORD</h2>
+        <h2>Renitialisez votre mot de passe</h2>
 
-        {{ form(Form) }}
+        <div class="Formulaire">
+
+
+            {{ form_start(Form) }}
+
+
+            <div class="FormGroup">
+                {{
+
+                form_widget(Form.password.first,  {
+                    'attr': {
+                        'class' : 'FormControl'
+                    }})
+
+                }}
+
+                {{
+                form_label(Form.password.first, label|default(null), {
+                    'label_attr' : {
+                        'class' : 'FormLabel'
+                    }
+                })
+                }}
+
+            </div>
+
+            <div class="FormGroup">
+                {{
+
+                form_widget(Form.password.second,  {
+                    'attr': {
+                        'class' : 'FormControl'
+                    }})
+
+                }}
+
+                {{
+                form_label(Form.password.second, label|default(null), {
+                    'label_attr' : {
+                        'class' : 'FormLabel'
+                    }
+                })
+                }}
+
+            </div>
+
+            {{ form_widget(Form.submit) }}
+
+            {{ form_end(Form) }}
+        </div>
 
     </section>
 {% endblock %}

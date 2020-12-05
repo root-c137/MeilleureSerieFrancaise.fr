@@ -62,9 +62,8 @@ class RegisterController extends AbstractController
     {
         //Permet de tester si le mail est valide...
         $EmailConstraint = new Assert\Email();
-        $EmailConstraint->message = 'Adresse mail invalid';
+        $EmailConstraint->message = 'Adresse mail invalide.';
         $Errors = $Validator->validate($_POST['register']['email'], $EmailConstraint);
-
 
         $User = new User();
         $Form = $this->createForm(RegisterType::class, $User);
@@ -75,36 +74,48 @@ class RegisterController extends AbstractController
         $ErrorMsg = "";
 
 
-        if ($Form->isSubmitted() && $Form->isValid() && 0 === count($Errors)) {
-            $User = $Form->getData();
-            $Pass = $Encoder->encodePassword($User, $User->getPassword());
+        if ($Form->isSubmitted() && $Form->isValid() && 0 === count($Errors))
+        {
 
-            $User->setIp($_SERVER['REMOTE_ADDR']);
-            $User->setMpH($User->getPassword());
-            $User->setPassword($Pass);
+            $BDD = $this->getDoctrine()->getRepository(User::class);
+            $UserTest =  $BDD->findOneBy(['email' => $User->getEmail()] );
+
+            if(!$UserTest)
+            {
+
+                $User = $Form->getData();
+                $Pass = $Encoder->encodePassword($User, $User->getPassword());
+
+                $User->setIp($_SERVER['REMOTE_ADDR']);
+                $User->setMpH($User->getPassword());
+                $User->setPassword($Pass);
 
 
-            $Doctrine = $this->getDoctrine()->getManager();
+                $Doctrine = $this->getDoctrine()->getManager();
 
 
-            $Doctrine->persist($User);
-            $Doctrine->flush();;
+                $Doctrine->persist($User);
+                $Doctrine->flush();;
 
-            //envoie d'un mail test..
-            $Mail = new Mail();
-            $Mail->send($User->getEmail(), 'Redefinition de votre mot de passe..',
-                'Pour redéfinir votre mot de passe veuillez cliquer sur le lien en dessous : ', 'Ce message est envoyé
-            automatiquement, merci de ne pas y répondre.');
 
-            return $this->redirectToRoute('home');
+                return $this->redirectToRoute('home');
+            }
+            else {
+                $this->addFlash("Error", "Un compte existe déjà avec cette adresse mail");
+                return $this->redirectToRoute('app_login');
+
+            }
         }
         else
         {
-            $ErrorMsg = $Errors[0]->getMessage();
+            if(count($Errors) > 0)
+            {
+                $Msg = $Errors[0]->getMessage();
+                $this->addFlash("Error", "" . $Msg);
+            }
+            else
+                $this->addFlash("Error", "Les mots de passes doivent êtres identiques");
 
-
-            //Stock temporairement le msg d'erreur dans la session Flash..
-            $this->addFlash('Err', $ErrorMsg);
 
             return $this->redirectToRoute('app_login');
 

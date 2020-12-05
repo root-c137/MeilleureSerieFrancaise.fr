@@ -73,9 +73,9 @@
         <div class="Formulaire">
 
             <div class="ErrorMsg">
-                {% if Err is not empty %}
-                    <p>{{ Err[0] }}</p>
-                {% endif %}
+                {% for Err in app.flashes('Error') %}
+                    <p>{{ Err }}</p>
+                {% endfor %}
             </div>
 
             {{ form_start(Form) }}
