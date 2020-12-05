@@ -50,30 +50,34 @@ class HomeController extends AbstractController
      */
     public function NewVote()
     {
-        $E = 0;
+        if($this->getUser()) {
+            $E = 0;
 
-        if(!empty($_POST['Vote']) )
-        {
-            $Date = date_create()->format('Y-m-d H:i:s');
+            if (!empty($_POST['Vote'])) {
+                $Date = date_create()->format('Y-m-d H:i:s');
 
-            $EM = $this->getDoctrine()->getManager();
+                $EM = $this->getDoctrine()->getManager();
 
-            $Serie = $EM->getRepository(Serie::class)->find($_POST['Vote']);
+                $Serie = $EM->getRepository(Serie::class)->find($_POST['Vote']);
 
-            $NbVoteActuel = $Serie->getNbVote();
-            $Serie->setNbVote($NbVoteActuel+1);
+                $NbVoteActuel = $Serie->getNbVote();
+                $Serie->setNbVote($NbVoteActuel + 1);
 
-            $Vote = new Votes();
-            $Vote->setIp($_SERVER['REMOTE_ADDR']);
-            $EM->persist($Vote);
+                $Vote = new Votes();
+                $Vote->setIp($_SERVER['REMOTE_ADDR']);
+                $EM->persist($Vote);
 
-            $EM->flush();
+                $EM->flush();
 
+            } else
+                $E = 1;
+
+            return $this->redirectToRoute('home');
         }
         else
-        $E = 1;
-
-        return $this->redirectToRoute('home');
+        {
+            return $this->redirectToRoute('app_login');
+        }
     }
 
 

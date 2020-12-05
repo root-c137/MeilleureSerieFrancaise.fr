@@ -139,9 +139,9 @@
 
 .FormControl:focus
 {
-    box-shadow:none;
-    outline:none;
-    border-color: #16a596;
+box-shadow:none;
+outline:none;
+border-color: #16a596;
 }
 .FormGroup:focus-within
 {
@@ -162,7 +162,7 @@
 
 }
 
-.GoInscription, .GoConnexion, .GoModifier
+.GoInscription, .GoConnexion
 {
     height:2rem;
     margin-top:2rem;
@@ -171,6 +171,7 @@
     outline: none;
     background-color:#16a596;
 }
+
  .GoInscription:hover, .GoModifier:hover
 {
     background-color: #138f82;
@@ -185,10 +186,7 @@
     padding:0.3rem;
 }
 
-.GoModifier
-{
-    padding:1rem;
-}
+
 .ErrorMsg
 {
     color:#FF7F7F;

@@ -24,3 +24,107 @@
     margin-top:2rem;
     text-align: center;
 }
+.ChangePassword_Link
+{
+    font-style: italic;
+    color:#fff;
+}
+.ChangePassword_Link:hover
+{
+    color:#212121;
+}
+
+.GoModifier
+{
+    height:2rem;
+    margin-top:2rem;
+    color:#FFF;
+    border:none;
+    outline: none;
+    background-color:#16a596;
+    padding-right:0.4rem;
+    padding-left:0.4rem;
+}
+
+@media screen and (min-width: 150px)
+{
+    #Acount, .ChangePassword_Form .FormLabel
+    {
+        font-size:0.7rem;
+    }
+
+    .FormControl:focus + .FormLabel,
+    .FormControl:not(:placeholder-shown) + .FormLabel
+    {
+        transform:translateY(-6em);
+    }
+    .GoModifier
+    {
+        width:60%;
+    }
+}
+@media screen and (min-width: 300px)
+{
+    #Acount, .ChangePassword_Form .FormLabel
+    {
+        font-size:1rem;
+    }
+
+    .FormControl:focus + .FormLabel,
+    .FormControl:not(:placeholder-shown) + .FormLabel
+    {
+        transform:translateY(-4.5em);
+    }
+    .GoModifier
+    {
+        width:40%;
+    }
+}
+@media screen and (min-width: 900px)
+{
+    .ChangePassword_Form
+
+    {
+        width:55%;
+    }
+    .GoModifier
+    {
+        width:30%;
+    }
+}
+
+@media screen and (min-width: 1000px)
+{
+    .ChangePassword_Form
+    {
+        width:45%;
+    }
+
+}
+
+@media screen and (min-width: 1200px)
+{
+    .ChangePassword_Form
+    {
+        width:40%;
+    }
+
+}
+
+@media screen and (min-width: 1300px)
+{
+    .ChangePassword_Form
+    {
+        width:35%;
+    }
+
+}
+
+@media screen and (min-width: 1500px)
+{
+    .ChangePassword_Form
+    {
+        width:30%;
+    }
+
+}
