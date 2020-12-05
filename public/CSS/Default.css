@@ -15,5 +15,17 @@ body
     color:#6D6F6E;
 }
 
+.ErrorMsg
+{
+    color:#FF7F7F;
+    text-align: center;
+}
+.NoticeMsg
+{
+    color:limegreen;
+    text-align: center;
+}
+
+
 
 

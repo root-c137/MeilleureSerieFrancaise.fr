@@ -28,6 +28,14 @@
 
     </section>
 
+    {%  for Msg in app.flashes('notice') %}
+        <p class="NoticeMsg">{{ Msg }}</p>
+    {% endfor %}
+
+    {%  for Msg in app.flashes('Err') %}
+        <p class="ErrorMsg">{{ Msg }}</p>
+    {% endfor %}
+
     <section class="ChangePassword_Form">
 
         {{ form_start(Form) }}
