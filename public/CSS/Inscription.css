@@ -22,7 +22,7 @@
     align-items: center;
 
 }
-#Inscription, .Connexion
+#Inscription, .Connexion, .UpdatePassword
 
 {
     width:100%;
@@ -75,13 +75,12 @@
     justify-content: center;
 }
 
-.Connexion form, #Inscription form
+.Connexion form, #Inscription form, form
 {
     justify-content: center;
     align-items: center;
     width:100%;
     margin-top:3rem;
-
 }
 
 
@@ -163,7 +162,7 @@
 
 }
 
-.GoInscription, .GoConnexion
+.GoInscription, .GoConnexion, .GoModifier
 {
     height:2rem;
     margin-top:2rem;
@@ -172,18 +171,24 @@
     outline: none;
     background-color:#16a596;
 }
- .GoInscription:hover
+ .GoInscription:hover, .GoModifier:hover
 {
     background-color: #138f82;
     cursor:pointer;
 }
 
+
 .GoConnexion
 {
+    margin:auto;
     margin-top:0;
     padding:0.3rem;
 }
 
+.GoModifier
+{
+    padding:1rem;
+}
 .ErrorMsg
 {
     color:#FF7F7F;
@@ -197,7 +202,7 @@
         flex-direction: column;
     }
 
-    #Inscription .Formulaire, .Connexion
+    #Inscription .Formulaire, .Connexion, .ChangePassword_Form
     {
         width:100%;
     }
@@ -303,7 +308,7 @@
         align-items: start;
     }
 
-    #Inscription, .Connexion
+    #Inscription, .Connexion, .ChangePassword_Form
     {
         width:30%;
     }
@@ -328,7 +333,7 @@
     {
         width:20%;
     }
-    #Inscription, .Connexion
+    #Inscription, .Connexion, .ChangePassword_Form
     {
         width:40%;
     }
@@ -348,7 +353,7 @@
     {
         flex-direction: row;
     }
-    #Inscription, .Connexion
+    #Inscription, .Connexion, .ChangePassword_Form
     {
         width:30%;
     }

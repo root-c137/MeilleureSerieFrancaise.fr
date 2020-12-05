@@ -14,12 +14,16 @@ header .Title
     text-align: center;
 }
 
-header .Title a
+header .Title a, header a
 {
     text-decoration: none;
     color:#16a596;
 }
-header .Title a:hover
+header a
+{
+    color:#6D6F6E;
+}
+header .Title a:hover, header a:hover
 {
     color:#19bcaa;
 }

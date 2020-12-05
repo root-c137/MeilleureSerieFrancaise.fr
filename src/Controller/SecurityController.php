@@ -17,9 +17,10 @@ class SecurityController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        // if ($this->getUser()) {
-        //     return $this->redirectToRoute('target_path');
-        // }
+         if ($this->getUser())
+         {
+             return $this->redirectToRoute('home');
+         }
         //On récupère le msg d'erreur, si il y en a, sinon = null..
         $Err = $this->get('session')->getFlashBag()->get('Err');
 
@@ -33,7 +34,6 @@ class SecurityController extends AbstractController
             'action' => $this->generateUrl('NewMembre'),
             'method' => 'POST'
         ]);
-
 
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,

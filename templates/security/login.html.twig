@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
 
+    <link rel="stylesheet" href="{{ asset("CSS/LabelFloat.css")  }}"/>
     <link rel="stylesheet" href="{{ asset("CSS/Inscription.css")  }}"/>
+
 {% endblock %}
 {% block title %}Connexion/Inscription{% endblock %}
 
@@ -38,7 +40,7 @@
                 <div class="FormGroup" >
                     <input type="password" name="password" id="inputPassword" placeholder="mot de passe" class="FormControl" required>
                     <label for="inputPassword" class="FormLabel">Password</label>
-                    <a href="#" class="HelpPassword">Mot de passe oublié ?</a>
+                    <a href="{{ path('reset_password') }}" class="HelpPassword">Mot de passe oublié ?</a>
 
                 </div>
 

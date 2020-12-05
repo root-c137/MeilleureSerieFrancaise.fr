@@ -1,0 +1,19 @@
+
+{% block title %}Mot de passe oublié{% endblock %}
+
+{% block stylesheets %}
+
+    <link rel="stylesheet" href="{{ asset("CSS/LabelFloat.css")  }}"/>
+    <link rel="stylesheet" href="{{ asset("CSS/Inscription.css")  }}"/>
+
+{% endblock %}
+
+{% block body %}
+    <section class="UpdatePassword">
+
+        <h2>UPDATE PASSWORD</h2>
+
+        {{ form(Form) }}
+
+    </section>
+{% endblock %}

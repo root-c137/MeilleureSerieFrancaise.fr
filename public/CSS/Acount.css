@@ -1,0 +1,26 @@
+#Acount
+{
+    height:10rem;
+    text-align: center;
+    margin:auto;
+    background-color: #16a596;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#FFF;
+}
+
+#Acount h1
+{
+    margin-bottom: 2rem;
+}
+
+
+.ChangePassword_Form
+{
+    display:none;
+    margin:auto;
+    margin-top:2rem;
+    text-align: center;
+}

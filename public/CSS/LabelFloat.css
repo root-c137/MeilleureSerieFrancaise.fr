@@ -1,0 +1,63 @@
+
+.FormControl
+{
+    height:2.3rem;
+    border:1px solid #e0e0e0;
+    outline: none;
+    margin-bottom:1rem;
+}
+
+
+
+.FormGroup
+{
+    margin-bottom: 1rem;
+    transition: all .3s;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+
+}
+
+.FormLabel
+{
+    font-size:1rem;
+    color:#aaa;
+    opacity:1;
+    display: block;
+    transform:translateY(-3em);
+    transform-origin: 0 0;
+    transition: all .3s;
+}
+
+.FormControl
+{
+    box-shadow: none;
+    width:100%;
+    border-color: #ccc;
+    transition:all .5s;
+    padding:5px;
+}
+
+.FormControl::placeholder
+{
+    color:transparent;
+}
+.FormControl:focus + .FormLabel,
+.FormControl:not(:placeholder-shown) + .FormLabel
+{
+    transform:translateY(-4.5em);
+}
+
+.FormControl:focus
+{
+    box-shadow:none;
+    outline:none;
+    border-color: #16a596;
+}
+.FormGroup:focus-within
+{
+
+}

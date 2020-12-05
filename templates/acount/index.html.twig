@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Compte - MeilleureSerieFrancaise.fr{% endblock %}
+
 {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("CSS/Inscription.css")  }}"/>
     <link rel="stylesheet" href="{{ asset("CSS/Acount.css")  }}"/>
 {% endblock %}
 
@@ -19,11 +21,75 @@
             </tr>
             <tr>
                 <td>Mot de passe : </td>
-                <td>****** <a href="#">modifier le mot de passe</a></td>
+                <td>****** <a class="ChangePassword_Link" href="#">modifier le mot de passe</a></td>
             </tr>
 
         </table>
 
     </section>
 
+    <section class="ChangePassword_Form">
+
+        {{ form_start(Form) }}
+
+        <div class="FormGroup">
+
+
+            {{ form_widget(Form.password) }}
+            {{ form_label(Form.password) }}
+        </div>
+
+        <div class="FormGroup">
+            {{
+
+            form_widget(Form.new_password.first,  {
+                'attr': {
+                    'class' : 'FormControl'
+                }})
+
+            }}
+
+            {{
+            form_label(Form.new_password.first, label|default(null), {
+                'label_attr' : {
+                    'class' : 'FormLabel'
+                }
+            })
+            }}
+
+        </div>
+
+        <div class="FormGroup">
+            {{
+
+            form_widget(Form.new_password.second,  {
+                'attr': {
+                    'class' : 'FormControl'
+                }})
+
+            }}
+
+            {{
+            form_label(Form.new_password.second, label|default(null), {
+                'label_attr' : {
+                    'class' : 'FormLabel'
+                }
+            })
+            }}
+
+        </div>
+
+        {{ form_widget(Form.submit) }}
+
+        {{ form_end(Form) }}
+
+
+    </section>
+
 {% endblock %}
+
+   {% block javascripts %}
+
+       <script type="text/javascript" src="{{ asset('/JS/ChangePassword.js') }}"></script>
+
+   {% endblock %}

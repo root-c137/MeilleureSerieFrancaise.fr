@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Classes\Mail;
 use App\Entity\Membre;
 use App\Entity\User;
 use App\Errors\Error;
@@ -60,8 +61,6 @@ class RegisterController extends AbstractController
     public function NewMembre(Request $Requette, UserPasswordEncoderInterface $Encoder, ValidatorInterface $Validator)
     {
         //Permet de tester si le mail est valide...
-
-
         $EmailConstraint = new Assert\Email();
         $EmailConstraint->message = 'Adresse mail invalid';
         $Errors = $Validator->validate($_POST['register']['email'], $EmailConstraint);
@@ -91,7 +90,11 @@ class RegisterController extends AbstractController
             $Doctrine->persist($User);
             $Doctrine->flush();;
 
-            //Permet de logé l'user directement..
+            //envoie d'un mail test..
+            $Mail = new Mail();
+            $Mail->send($User->getEmail(), 'Redefinition de votre mot de passe..',
+                'Pour redéfinir votre mot de passe veuillez cliquer sur le lien en dessous : ', 'Ce message est envoyé
+            automatiquement, merci de ne pas y répondre.');
 
             return $this->redirectToRoute('home');
         }

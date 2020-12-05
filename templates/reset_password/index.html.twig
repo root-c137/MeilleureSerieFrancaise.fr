@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mot de passe oublié{% endblock %}
+
+{% block stylesheets %}
+
+    <link rel="stylesheet" href="{{ asset("CSS/LabelFloat.css")  }}"/>
+    <link rel="stylesheet" href="{{ asset("CSS/Inscription.css")  }}"/>
+
+{% endblock %}
+
+{% block body %}
+    <section class="UpdatePassword">
+
+        <h2>Réinitialiser votre mot de passe</h2>
+
+        <p>Entrez votre adresse mail, vous receverez un lien pour redefinir votre mot de passe</p>
+
+        <form method="post" action="{{ path('reset_password') }}">
+
+            <div class="FormGroup" >
+                <input type="email" name="email" placeholder="adresse mail" id="inputEmail" class="FormControl" required>
+                <label for="inputEmail" class="FormLabel">Email</label>
+            </div>
+
+
+            <button class="GoConnexion" type="submit">
+                Envoyé
+            </button>
+        </form>
+
+    </section>
+{% endblock %}
