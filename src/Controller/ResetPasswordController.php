@@ -56,8 +56,15 @@ class ResetPasswordController extends AbstractController
                     $Content.$url,
                     $FooterContent
                 );
+
+                $this->addFlash('Notice', 'Vous allez recevoir un mail afin de redefinir votre mot de passe');
+            }
+            else
+            {
+                $this->addFlash('Err', "L'adresse mail ne correspond à aucun compte");
             }
         }
+
 
 
 

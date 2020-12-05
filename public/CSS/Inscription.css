@@ -194,6 +194,20 @@
     color:#FF7F7F;
 }
 
+.ResetPassword
+{
+    border-right:none;
+    margin:auto;
+    margin-top:2rem;
+}
+.TittleH2
+{
+    margin-bottom:1rem;
+}
+.ResetPassword_TXT
+{
+    margin-bottom: 1rem;
+}
 
 @media screen and (min-width: 200px)
 {
@@ -319,6 +333,10 @@
     .GoConnexion, .GoInscription
     {
         width:60%;
+    }
+    .ResetPassword
+    {
+        width:50%;
     }
 }
 
