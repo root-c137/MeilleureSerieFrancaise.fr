@@ -46,7 +46,7 @@ class ResetPasswordController extends AbstractController
                 $this->EntityManager->flush();
 
                 $Content = "Pour réinitialiser votre mot de passe, veuillez cliquer sur le lien ci-dessous :<br/><br/>";
-                $url = "<a href='".$this->generateUrl('update_password', ['Token' => $ResetPass->getToken()])."'>Cliquez ici pour réinitialiser votre mot de passe</a>";
+                $url = "<a href='https://meilleureseriefrancaise.fr".$this->generateUrl('update_password', ['Token' => $ResetPass->getToken()])."'>Cliquez ici pour réinitialiser votre mot de passe</a>";
                 $FooterContent = 'Ce message est envoyé automatiquement, merci de ne pas y répondre.';
 
                 $Mail = new Mail();
