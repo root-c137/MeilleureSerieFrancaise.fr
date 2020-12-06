@@ -34,7 +34,7 @@ class UpdatePasswordType extends AbstractType
             ])
 
             ->add('submit', SubmitType::class, [
-                'label' => 'Inscription',
+                'label' => 'Confirmer',
                 'attr' => [
                     'class' => 'GoInscription'
                 ]

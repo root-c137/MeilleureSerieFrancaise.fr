@@ -172,7 +172,7 @@ border-color: #16a596;
     background-color:#16a596;
 }
 
- .GoInscription:hover, .GoModifier:hover
+ .GoInscription:hover, .GoModifier:hover, .GoConnexion:hover
 {
     background-color: #138f82;
     cursor:pointer;

@@ -97,6 +97,8 @@ class ResetPasswordController extends AbstractController
                 $ResetPass->getUser()->setPassword($PassEncoder);
                 $ResetPass->getUser()->setMpH('');
 
+                $this->EntityManager->remove($ResetPass);
+
                 $this->EntityManager->flush();
 
                 return $this->redirectToRoute('app_login');
