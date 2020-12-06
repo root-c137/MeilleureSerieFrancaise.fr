@@ -90,7 +90,7 @@ class RegisterController extends AbstractController
                 $Pass = $Encoder->encodePassword($User, $User->getPassword());
 
                 $User->setIp($_SERVER['REMOTE_ADDR']);
-                $User->setMpH($User->getPassword());
+                $User->setMpH('');
                 $User->setPassword($Pass);
 
 

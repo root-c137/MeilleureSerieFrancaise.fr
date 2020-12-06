@@ -57,15 +57,35 @@ class HomeController extends AbstractController
                 $Date = date_create()->format('Y-m-d H:i:s');
 
                 $EM = $this->getDoctrine()->getManager();
+                $AncienVote = $EM->getRepository(Votes::class)->findOneBy(['User' => $this->getUser()] );
 
-                $Serie = $EM->getRepository(Serie::class)->find($_POST['Vote']);
+                //Si l'user à déjà voté, et donc il est présent dans la table votes..
+                if($AncienVote)
+                {
+                    //On récupère la série pour laquel il avait voté et on lui enlève 1..
+                    $Serie = $EM->getRepository(Serie::class)->find($AncienVote->getSerie());
+                    $NbVoteActuel = $Serie->getNbVote();
+                    $Serie->setNbVote($NbVoteActuel - 1);
 
-                $NbVoteActuel = $Serie->getNbVote();
-                $Serie->setNbVote($NbVoteActuel + 1);
+                    $NewSerie = $EM->getRepository(Serie::class)->find($_POST['Vote']);
+                    $NbVoteActuel = $NewSerie->getNbVote();
+                    $NewSerie->setNbVote($NbVoteActuel + 1);
 
-                $Vote = new Votes();
-                $Vote->setIp($_SERVER['REMOTE_ADDR']);
-                $EM->persist($Vote);
+                    $AncienVote->setSerie($NewSerie);
+
+                }
+                else
+                 {
+                    $Serie = $EM->getRepository(Serie::class)->find($_POST['Vote']);
+                    $NbVoteActuel = $Serie->getNbVote();
+                    $Serie->setNbVote($NbVoteActuel + 1);
+
+                    $Vote = new Votes();
+                    $Vote->setIp($_SERVER['REMOTE_ADDR']);
+                    $Vote->setUser($this->getUser());
+                    $Vote->setSerie($Serie);
+                    $EM->persist($Vote);
+                 }
 
                 $EM->flush();
 

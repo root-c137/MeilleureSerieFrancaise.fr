@@ -108,7 +108,6 @@ class ResetPasswordController extends AbstractController
         }
         else
         {
-            dd('token introuvable');
             return $this->redirectToRoute('home');
         }
     }

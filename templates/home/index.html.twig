@@ -19,6 +19,10 @@
         <section class="Votes">
 
             <p>Pourquoi ces séries en particulier ? Parceque c'est comme ça.</p>
+
+            {% if app.getUser() %}
+                <p class="VoteActuel">Vous n'avez pas encore voter.</p>
+            {% endif %}
             <p class="TotalVote">
 
                 {% if VoteNull %}

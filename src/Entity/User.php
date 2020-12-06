@@ -44,6 +44,12 @@ class User implements UserInterface
      */
     private $ip;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Votes::class, mappedBy="User", cascade={"persist", "remove"})
+     */
+    private $votes;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -145,6 +151,24 @@ class User implements UserInterface
 
         return $this;
     }
+
+    public function getVotes(): ?Votes
+    {
+        return $this->votes;
+    }
+
+    public function setVotes(Votes $votes): self
+    {
+        $this->votes = $votes;
+
+        // set the owning side of the relation if necessary
+        if ($votes->getUser() !== $this) {
+            $votes->setUser($this);
+        }
+
+        return $this;
+    }
+
 
 
 
