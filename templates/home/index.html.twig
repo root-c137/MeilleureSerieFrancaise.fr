@@ -18,10 +18,13 @@
 
         <section class="Votes">
 
-            <p>Pourquoi ces séries en particulier ? Parceque c'est comme ça.</p>
+            <p>Pourquoi ces séries en particulier ? Parce que c'est comme ça</p>
 
-            {% if app.getUser() %}
-                <p class="VoteActuel">Vous n'avez pas encore voter.</p>
+            {% if app.user and SerieActuel is not empty %}
+                <p class="VoteActuel">Votre vote : {{ SerieActuel.nom }}</p>
+            {% endif %}
+            {% if app.user and SerieActuel is empty %}
+                <p class="VoteActuel">Votre vote : vous n'avez pas encore voter.</p>
             {% endif %}
             <p class="TotalVote">
 
@@ -51,7 +54,11 @@
 
                 <tr>
                     {% for Serie in Series %}
-                        <td><label class="Container"><input type="radio" name="Vote" id="Serie" value="{{ Serie.id }}"/><span class="RadioCustom"><img class="CheckImg" src="{{ asset('/Imgs/Coche.png') }}"/></span></label></td>
+                        <td><label class="Container"><input type="radio" name="Vote"  id="Serie" value="{{ Serie.id }}"
+                                        {% if app.user and SerieActuel is not empty and Serie.id == SerieActuel.id %}
+                                            checked
+                                        {% endif %}
+                                /><span class="RadioCustom"><img class="CheckImg" src="{{ asset('/Imgs/Coche.png') }}"/></span></label></td>
                     {% endfor %}
 
                 </tr>

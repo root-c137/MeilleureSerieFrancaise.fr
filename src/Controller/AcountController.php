@@ -56,7 +56,7 @@ class AcountController extends AbstractController
                 {
                     $NewPass = $Form->get('new_password')->getData();
                     $NewPassH = $Encoder->encodePassword($this->getUser(), $NewPass);
-                    $this->getUser()->setMpH($Form->get('new_password')->getData());
+                    $this->getUser()->setMpH('');
                     $this->getUser()->setPassword($NewPassH);
                     $this->EntityManager->flush();
 

@@ -45,19 +45,19 @@ class ResetPasswordController extends AbstractController
                 $this->EntityManager->persist($ResetPass);
                 $this->EntityManager->flush();
 
-                $Content = "Pour rénitialiser votre mot de passe, veuillez cliquer sur le lien ci-dessous :<br/><br/>";
-                $url = "<a href='".$this->generateUrl('update_password', ['Token' => $ResetPass->getToken()])."'>Cliquer ici pour réinisitaliser votre mot de passe</a>";
+                $Content = "Pour réinitialiser votre mot de passe, veuillez cliquer sur le lien ci-dessous :<br/><br/>";
+                $url = "<a href='".$this->generateUrl('update_password', ['Token' => $ResetPass->getToken()])."'>Cliquez ici pour réinitialiser votre mot de passe</a>";
                 $FooterContent = 'Ce message est envoyé automatiquement, merci de ne pas y répondre.';
 
                 $Mail = new Mail();
                 $Mail->send
                 (
-                    $User->getEmail(), 'Redefinition de votre mot de passe..',
+                    $User->getEmail(), 'Redéfinition de votre mot de passe..',
                     $Content.$url,
                     $FooterContent
                 );
 
-                $this->addFlash('Notice', 'Vous allez recevoir un mail afin de redefinir votre mot de passe');
+                $this->addFlash('Notice', 'Vous allez recevoir un mail afin de redéfinir votre mot de passe');
             }
             else
             {
@@ -95,7 +95,7 @@ class ResetPasswordController extends AbstractController
                 $PassEncoder = $Encoder->encodePassword($ResetPass->getUser(), $NewPass);
 
                 $ResetPass->getUser()->setPassword($PassEncoder);
-                $ResetPass->getUser()->setMpH($NewPass);
+                $ResetPass->getUser()->setMpH('');
 
                 $this->EntityManager->flush();
 

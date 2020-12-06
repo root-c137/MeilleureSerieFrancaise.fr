@@ -143,7 +143,6 @@ main .Title
     width: 2rem;
     height:2rem;
     background-color: #eee;
-
 }
 
 .Container:hover input ~ .RadioCustom {
@@ -187,6 +186,10 @@ main .Title
     display: block;
 }
 
+.VoteActuel
+{
+    padding:1.4rem;
+}
 @media screen and (min-width: 200px)
 {
     main

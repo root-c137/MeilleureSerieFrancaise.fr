@@ -26,6 +26,15 @@ class HomeController extends AbstractController
         $Series = $Rep->findBy(array(), array('Nb_Vote' => 'DESC'));
         $Total = count($Rep2->findAll());
 
+        $SerieActuel = '';
+        if($this->getUser())
+        {
+            $VoteActuel = $Rep2->findOneBy(['User' => $this->getUser()]);
+
+            if(!is_null($VoteActuel) )
+            $SerieActuel = $VoteActuel->getSerie();
+
+        }
         $VoteNull = false;
 
         if($Total == 0)
@@ -38,6 +47,7 @@ class HomeController extends AbstractController
             'Series' => $Series,
             'Total' => $Total,
             'VoteNull' => $VoteNull,
+            'SerieActuel' => $SerieActuel
         ]);
     }
 

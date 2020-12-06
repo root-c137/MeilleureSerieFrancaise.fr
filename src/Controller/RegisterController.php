@@ -117,7 +117,7 @@ class RegisterController extends AbstractController
                 $this->addFlash("Error", "" . $Msg);
             }
             else
-                $this->addFlash("Error", "Les mots de passes doivent êtres identiques");
+                $this->addFlash("Error", "Les mots de passe doivent être identiques.");
 
 
             return $this->redirectToRoute('app_login');
